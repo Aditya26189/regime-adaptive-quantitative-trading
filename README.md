@@ -33,7 +33,8 @@ conclave/
 │   │
 │   ├── data/                      # Data handling
 │   │   ├── loader.py             # CSV loading + validation
-│   │   └── features.py           # Feature engineering
+│   │   ├── features.py           # Feature engineering
+│   │   └── noise_filters.py      # Data cleaning (outliers, bounces, spikes)
 │   │
 │   ├── signals/                   # Signal generators
 │   │   ├── price_based.py        # Z-score, momentum, mean reversion
@@ -41,7 +42,11 @@ conclave/
 │   │   └── regime_based.py       # Volatility/trend/spread filters
 │   │
 │   ├── execution/                 # Strategy execution
-│   │   └── strategy.py           # Signal + risk combiner
+│   │   ├── strategy.py           # Signal + risk combiner
+│   │   └── ensemble.py           # Multi-signal ensemble voting
+│   │
+│   ├── evaluation/                # Performance analysis
+│   │   └── signal_analysis.py    # Information Coefficient (IC) analysis
 │   │
 │   └── visualization/             # Plotting
 │       └── plotter.py            # Charts and dashboards
@@ -49,6 +54,7 @@ conclave/
 ├── scripts/
 │   ├── run_pipeline.py           # Main execution script
 │   ├── grid_search.py            # Parameter optimization
+│   ├── walk_forward.py           # Overfitting detection
 │   └── validate_submission.py    # Pre-submission checks
 │
 └── tests/
@@ -56,6 +62,48 @@ conclave/
 ```
 
 ---
+
+## 🚀 New Advanced Components
+
+### Noise Filtering
+Clean dirty market data before analysis:
+```bash
+python -c "from src.data.noise_filters import NoiseFilter; ..."
+```
+- Removes price outliers (5σ)
+- Smooths bid-ask bounces
+- Flags volume spikes
+- Validates timestamps
+
+### Walk-Forward Optimization
+Detect overfitting with rolling windows:
+```bash
+python scripts/walk_forward.py --data data.csv --strategy z_score
+```
+- Tests parameters across multiple time periods
+- Reports degradation % (ideal: <20%)
+- Warns when overfitting is high
+
+### Signal IC Analysis
+Measure predictive power of signals:
+```bash
+python -m src.evaluation.signal_analysis --data data.csv
+```
+- Computes Spearman correlation with forward returns
+- Shows regime-specific IC (CALM/NORMAL/VOLATILE)
+- Recommends which signals to use
+
+### Ensemble Strategy
+Combine multiple signals for robustness:
+```python
+from src.execution.ensemble import EnsembleStrategy
+ensemble = EnsembleStrategy([(obi_signal, {}), (z_score_signal, {})])
+```
+- Weighted voting across signals
+- IC-weighted ensembles
+- Minimum agreement threshold
+
+
 
 ## 🛠️ Installation
 
