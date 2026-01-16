@@ -1,0 +1,8 @@
+TRADE COUNT AFTER FIXES
+==================================================
+PASS: NIFTY50      - 139 trades
+PASS: RELIANCE     - 141 trades
+PASS: VBL          - 148 trades
+PASS: YESBANK      - 154 trades
+PASS: SUNPHARMA    - 135 trades
+==================================================

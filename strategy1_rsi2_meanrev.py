@@ -252,18 +252,18 @@ def generate_signals(df: pd.DataFrame, config=None) -> pd.DataFrame:
         # ENTRY LOGIC (only if not in position)
         # ----------------------------------------
         if not in_position:
-            # Entry Condition 1: Extreme oversold (RSI(2) < 25)
-            # Using 25 instead of 10 to generate more signals
-            cond_oversold = prev_rsi2 < 25
+            # Entry Condition 1: Oversold (RSI(2) < 20) - balanced for 120+ trade minimum
+            # Note: EMA(200) filter removed to meet trade count requirement
+            # Competition requires 120+ trades; strict filters generate only 43-66
+            cond_oversold = prev_rsi2 < 20
             
-            # Entry Condition 2: Sufficient volatility (> 0.1%)
-            # Lowered from 0.2% to capture more opportunities
-            cond_volatility = prev_volatility > 0.001
+            # Entry Condition 2: Minimal volatility gate (> 0.2%) - filter flat periods
+            cond_volatility = prev_volatility > 0.002
             
-            # Entry Condition 3: Not at end of day (avoid entering near close)
-            not_eod = not (current_hour >= 15 and current_minute >= 0)
+            # Entry Condition 3: Not at end of day (allow until 14:45 for 30min resolution)
+            not_eod = not (current_hour >= 14 and current_minute >= 45)
             
-            # Entry conditions (EMA filter removed for more trades)
+            # Entry conditions (meet 120 trade minimum requirement)
             if cond_oversold and cond_volatility and not_eod:
                 df.loc[df.index[i], 'signal'] = 1  # BUY signal
                 in_position = True
@@ -288,6 +288,7 @@ class Config:
     DATA_FILE = "fyers_data/NSE_NIFTY50_INDEX_1hour.csv"
     INITIAL_CAPITAL = 100000
     FEE_PER_ORDER = 24  # ₹24 per order (₹48 total per roundtrip)
+    MAX_CONCURRENT_POSITIONS = 3  # Global limit across all symbols/strategies
 
 
 class BacktestEngine:
