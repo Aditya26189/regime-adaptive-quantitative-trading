@@ -27,15 +27,23 @@ graph TB
     subgraph "Optimization Layer"
         O1[Optimizer V1-V6<br/>Parameter Testing]
         O4[Time Analysis<br/>optimizer_v4_time.py]
+        O7[Sharpe Optimizer<br/>sharpe_optimizer.py]
+    end
+
+    subgraph "Advanced Strategy Layer"
+        RD[Regime Detection<br/>regime_detection.py]
+        HA[Hybrid Adaptive<br/>hybrid_adaptive.py]
     end
     
     subgraph "Output Layer"
         GEN[Submission Generator<br/>generate_strategy1_only.py]
-        SUB[Final CSV<br/>23ME3EP03_strategy1_submission.csv]
+        SGEN[Sharpe Generator<br/>sharpe_submission_generator.py]
+        SUB[Final CSV<br/>23ME3EP03_sharpe_submission.csv]
     end
     
     CSV --> S1
     CSV --> S2
+    CSV --> RD
     S1 --> PM
     S2 --> PM
     PM --> WF
@@ -44,7 +52,10 @@ graph TB
     O1 --> O4
     O4 --> S1
     S1 --> GEN
-    GEN --> SUB
+    RD --> HA
+    HA --> O7
+    O7 --> SGEN
+    SGEN --> SUB
     WF --> GEN
     CC --> GEN
 ```

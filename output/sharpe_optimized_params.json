@@ -1,0 +1,153 @@
+{
+  "NIFTY50": {
+    "params": {
+      "ker_period": 8,
+      "rsi_period": 2,
+      "vol_lookback": 14,
+      "max_return_cap": 5.0,
+      "ker_threshold_meanrev": 0.1674020854571259,
+      "ker_threshold_trend": 0.2807921870647279,
+      "rsi_entry": 33,
+      "rsi_exit": 69,
+      "vol_min_pct": 0.0072206337025778776,
+      "ema_fast": 5,
+      "ema_slow": 18,
+      "trend_pulse_mult": 0.4646616835957421,
+      "allowed_hours": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "max_hold_bars": 8
+    },
+    "metrics": {
+      "total_trades": 129,
+      "total_return_pct": -2.843750000000189,
+      "sharpe_ratio": -1.141925450369248,
+      "win_rate": 44.18604651162791,
+      "max_drawdown_pct": -5.287247736595106
+    }
+  },
+  "RELIANCE": {
+    "params": {
+      "ker_period": 10,
+      "rsi_period": 3,
+      "vol_lookback": 20,
+      "max_return_cap": 5.0,
+      "ker_threshold_meanrev": 0.2879164084360044,
+      "ker_threshold_trend": 0.4534522238981158,
+      "rsi_entry": 30,
+      "rsi_exit": 91,
+      "vol_min_pct": 0.004077361529688135,
+      "ema_fast": 5,
+      "ema_slow": 21,
+      "trend_pulse_mult": 0.38552472581344105,
+      "allowed_hours": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "max_hold_bars": 8
+    },
+    "metrics": {
+      "total_trades": 127,
+      "total_return_pct": 8.00735000000002,
+      "sharpe_ratio": 1.509742205003439,
+      "win_rate": 51.181102362204726,
+      "max_drawdown_pct": -4.767061721745584
+    }
+  },
+  "VBL": {
+    "params": {
+      "ker_period": 15,
+      "rsi_period": 2,
+      "vol_lookback": 20,
+      "max_return_cap": 5.0,
+      "ker_threshold_meanrev": 0.3688121069146094,
+      "ker_threshold_trend": 0.5927971951447675,
+      "rsi_entry": 39,
+      "rsi_exit": 89,
+      "vol_min_pct": 0.01351499684097407,
+      "ema_fast": 8,
+      "ema_slow": 21,
+      "trend_pulse_mult": 0.4386684279733015,
+      "allowed_hours": [
+        9,
+        10,
+        11
+      ],
+      "max_hold_bars": 10
+    },
+    "metrics": {
+      "total_trades": 127,
+      "total_return_pct": 9.094300000000018,
+      "sharpe_ratio": 1.1614461934808828,
+      "win_rate": 51.181102362204726,
+      "max_drawdown_pct": -7.467005813754896
+    }
+  },
+  "YESBANK": {
+    "params": {
+      "ker_period": 10,
+      "rsi_period": 2,
+      "vol_lookback": 20,
+      "max_return_cap": 5.0,
+      "ker_threshold_meanrev": 0.26980488595343255,
+      "ker_threshold_trend": 0.47911308589265544,
+      "rsi_entry": 23,
+      "rsi_exit": 88,
+      "vol_min_pct": 0.0054985912613041196,
+      "ema_fast": 5,
+      "ema_slow": 21,
+      "trend_pulse_mult": 0.4097573487563908,
+      "allowed_hours": [
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "max_hold_bars": 2
+    },
+    "metrics": {
+      "total_trades": 122,
+      "total_return_pct": 10.020559999999982,
+      "sharpe_ratio": 1.2782824594453832,
+      "win_rate": 51.63934426229508,
+      "max_drawdown_pct": -4.333902565180423
+    }
+  },
+  "SUNPHARMA": {
+    "params": {
+      "ker_period": 15,
+      "rsi_period": 2,
+      "vol_lookback": 14,
+      "max_return_cap": 5.0,
+      "ker_threshold_meanrev": 0.38224215306531234,
+      "ker_threshold_trend": 0.6094140658792518,
+      "rsi_entry": 38,
+      "rsi_exit": 52,
+      "vol_min_pct": 0.005067342725979184,
+      "ema_fast": 8,
+      "ema_slow": 21,
+      "trend_pulse_mult": 0.45596263377414287,
+      "allowed_hours": [
+        9,
+        10,
+        11
+      ],
+      "max_hold_bars": 8
+    },
+    "metrics": {
+      "total_trades": 144,
+      "total_return_pct": 7.529350000000195,
+      "sharpe_ratio": 1.8397266633978895,
+      "win_rate": 63.19444444444444,
+      "max_drawdown_pct": -4.634127897450881
+    }
+  }
+}

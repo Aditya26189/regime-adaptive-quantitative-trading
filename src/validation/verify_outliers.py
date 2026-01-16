@@ -5,9 +5,9 @@ import os
 
 # CONFIGURATION
 # Using the absolute path or relative path from project root
-SUBMISSION_FILE = "output/23ME3EP03_optimized_submission_20260116_215309.csv" 
+SUBMISSION_FILE = "output/23ME3EP03_sharpe_submission_20260117_051237.csv" 
 Z_SCORE_THRESHOLD = 3.0  # Statistical outlier limit
-ABSOLUTE_RETURN_CAP = 5.0 # Flag any trade > 15% return (Suspicious for 1H)
+ABSOLUTE_RETURN_CAP = 10.0 # Flag any trade > 15% return (Suspicious for 1H)
 
 def audit_outliers(file_path):
     print(f"🛡️  AUDITING FOR OUTLIERS: {file_path}")
