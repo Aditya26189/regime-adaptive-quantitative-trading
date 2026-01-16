@@ -1,0 +1,46 @@
+OPTIMIZATION RESULTS
+============================================================
+
+
+NIFTY50:
+  E_ProfitFocus: 142 trades, -7.14% return, Score=-306
+  C_Aggressive: 141 trades, -7.39% return, Score=-329
+  D_Baseline: 139 trades, -7.33% return, Score=-372
+  F_QuickExit: 161 trades, -11.47% return, Score=-561
+  A_Conservative: 21 trades, -0.28% return, Score=-1000
+  B_Balanced: 110 trades, -4.83% return, Score=-1000
+
+RELIANCE:
+  D_Baseline: 141 trades, -0.21% return, Score=182
+  F_QuickExit: 164 trades, -2.78% return, Score=33
+  A_Conservative: 48 trades, -0.28% return, Score=-1000
+  E_ProfitFocus: 154 trades, -98.63% return, Score=-4803
+  C_Aggressive: 148 trades, -99.64% return, Score=-4864
+  B_Balanced: 120 trades, -99.02% return, Score=-4870
+
+VBL:
+  D_Baseline: 148 trades, -4.47% return, Score=-135
+  B_Balanced: 170 trades, -14.48% return, Score=-692
+  A_Conservative: 44 trades, -5.39% return, Score=-1000
+  F_QuickExit: 211 trades, -21.7% return, Score=-1144
+  E_ProfitFocus: 202 trades, -25.95% return, Score=-1397
+  C_Aggressive: 199 trades, -27.9% return, Score=-1512
+
+YESBANK:
+  D_Baseline: 154 trades, -6.8% return, Score=-260
+  C_Aggressive: 187 trades, -8.13% return, Score=-381
+  B_Balanced: 168 trades, -15.73% return, Score=-790
+  E_ProfitFocus: 195 trades, -15.77% return, Score=-826
+  F_QuickExit: 207 trades, -16.95% return, Score=-895
+  A_Conservative: 49 trades, -2.12% return, Score=-1000
+
+SUNPHARMA:
+  D_Baseline: 135 trades, 4.05% return, Score=369
+  E_ProfitFocus: 154 trades, -1.57% return, Score=93
+  C_Aggressive: 146 trades, -2.31% return, Score=53
+  F_QuickExit: 166 trades, -2.66% return, Score=29
+  B_Balanced: 127 trades, -3.11% return, Score=-50
+  A_Conservative: 31 trades, -0.18% return, Score=-1000
+
+
+BEST OVERALL: D_Baseline

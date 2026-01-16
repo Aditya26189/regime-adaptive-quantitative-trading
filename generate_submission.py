@@ -199,7 +199,7 @@ if __name__ == "__main__":
     config = SubmissionConfig()
     
     print(f"\nStudent Roll Number: {config.STUDENT_ROLL_NUMBER}")
-    if config.STUDENT_ROLL_NUMBER == "23ME3EP03":
+    if config.STUDENT_ROLL_NUMBER == "YOUR_ROLL_NUMBER":
         print("⚠️  WARNING: Please update STUDENT_ROLL_NUMBER in SubmissionConfig")
     
     # Strategy 1: RSI(2) on 1H
