@@ -220,7 +220,7 @@ def generate_signals(df: pd.DataFrame, config=None) -> pd.DataFrame:
 
 class Config:
     """Configuration for backtesting."""
-    STUDENT_ROLL_NUMBER = "YOUR_ROLL_NUMBER"
+    STUDENT_ROLL_NUMBER = "23ME3EP03"
     STRATEGY_SUBMISSION_NUMBER = 2  # Strategy 2 = Donchian
     SYMBOL = "NSE:NIFTY50-INDEX"
     TIMEFRAME = "1D"  # Daily timeframe

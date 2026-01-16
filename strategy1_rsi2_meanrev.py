@@ -281,7 +281,7 @@ def generate_signals(df: pd.DataFrame, config=None) -> pd.DataFrame:
 
 class Config:
     """Configuration for backtesting."""
-    STUDENT_ROLL_NUMBER = "YOUR_ROLL_NUMBER"  # Replace with your roll number
+    STUDENT_ROLL_NUMBER = "23ME3EP03"  # Replace with your roll number
     STRATEGY_SUBMISSION_NUMBER = 1
     SYMBOL = "NSE:NIFTY50-INDEX"
     TIMEFRAME = "60"

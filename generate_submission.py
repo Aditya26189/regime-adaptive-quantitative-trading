@@ -31,7 +31,7 @@ from compliance_checker import run_death_check
 
 class SubmissionConfig:
     """Configuration for submission generation."""
-    STUDENT_ROLL_NUMBER = "YOUR_ROLL_NUMBER"  # REPLACE WITH YOUR ROLL NUMBER
+    STUDENT_ROLL_NUMBER = "23ME3EP03"  # REPLACE WITH YOUR ROLL NUMBER
     
     SYMBOLS_1H = [
         ("NSE:NIFTY50-INDEX", "fyers_data/NSE_NIFTY50_INDEX_1hour.csv"),
@@ -199,7 +199,7 @@ if __name__ == "__main__":
     config = SubmissionConfig()
     
     print(f"\nStudent Roll Number: {config.STUDENT_ROLL_NUMBER}")
-    if config.STUDENT_ROLL_NUMBER == "YOUR_ROLL_NUMBER":
+    if config.STUDENT_ROLL_NUMBER == "23ME3EP03":
         print("⚠️  WARNING: Please update STUDENT_ROLL_NUMBER in SubmissionConfig")
     
     # Strategy 1: RSI(2) on 1H

@@ -73,7 +73,7 @@ class PortfolioManager:
     MAX_CONCURRENT_POSITIONS = 3
     FEE_PER_ORDER = 24
     
-    def __init__(self, initial_capital: float = 100000, student_roll: str = "YOUR_ROLL_NUMBER"):
+    def __init__(self, initial_capital: float = 100000, student_roll: str = "23ME3EP03"):
         self.initial_capital = initial_capital
         self.cash = initial_capital
         self.positions: Dict[Tuple[str, str], Position] = {}  # {(symbol, strategy): Position}
@@ -284,7 +284,7 @@ def run_portfolio_backtest(symbols_data: Dict[str, pd.DataFrame],
     # Step 2: Initialize portfolio
     portfolio = PortfolioManager(
         initial_capital=config.get('initial_capital', 100000),
-        student_roll=config.get('student_roll', 'YOUR_ROLL_NUMBER')
+        student_roll=config.get('student_roll', '23ME3EP03')
     )
     
     # Step 3: Process chronologically

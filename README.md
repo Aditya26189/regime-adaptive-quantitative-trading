@@ -201,7 +201,7 @@ Edit `strategy1_rsi2_meanrev.py`:
 
 ```python
 class Config:
-    STUDENT_ROLL_NUMBER = "YOUR_ROLL_NUMBER"  # ← CHANGE THIS
+    STUDENT_ROLL_NUMBER = "23ME3EP03"  # ← CHANGE THIS
     STRATEGY_SUBMISSION_NUMBER = 1
     SYMBOL = "NSE:RELIANCE-EQ"                # ← CHANGE THIS
     TIMEFRAME = "60"
