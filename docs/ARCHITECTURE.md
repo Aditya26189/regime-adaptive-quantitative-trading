@@ -472,38 +472,37 @@ black              # Code formatting
 
 ```
 fyers/
-├── strategies/
-│   ├── strategy1_rsi2_meanrev.py    # RSI(2) strategy
-│   └── strategy_donchian.py         # Momentum strategy
+├── config/
+│   └── settings.py          # Central configuration
 │
-├── core/
-│   ├── portfolio_manager.py         # Portfolio management
-│   └── compliance_checker.py        # Validation
+├── data/
+│   └── raw/                 # CSV data files
 │
-├── optimization/
-│   ├── optimizer.py                 # V1-V3
-│   ├── optimizer_v4_time.py         # Time analysis
-│   └── optimizer_v6_9am_looser.py   # Final optimization
-│
-├── validation/
-│   └── walk_forward_validation.py   # Overfitting checks
-│
-├── submission/
-│   ├── generate_strategy1_only.py   # Generator
-│   └── 23ME3EP03_strategy1_*.csv    # Output
-│
-├── tests/
-│   ├── test_strategy.py
-│   ├── validate_all.py
-│   └── full_backtest.py
+├── src/
+│   ├── optimizers/
+│   │   └── fast_optimizer.py      # Random search optimizer
+│   │
+│   ├── submission/
+│   │   └── submission_generator.py # Final CSV generator
+│   │
+│   ├── utils/
+│   │   └── indicators.py          # Shared indicators
+│   │
+│   └── legacy/              # Archived scripts
+│       ├── strategy1_rsi2_meanrev.py
+│       ├── portfolio_manager.py
+│       └── ...
 │
 ├── docs/
-│   ├── ARCHITECTURE.md              # This file
-│   ├── COMPLETE_OPTIMIZATION_JOURNEY.md
-│   └── FINAL_OPTIMIZATION_SUMMARY.md
+│   ├── ARCHITECTURE.md
+│   ├── OPTIMIZATION_RESULTS_ANALYSIS.md
+│   └── ...
 │
-└── data/
-    └── fyers_data/                  # CSV files
+├── output/
+│   ├── optimal_params_per_symbol.json
+│   └── *_submission_*.csv
+│
+└── .env                     # Environment variables
 ```
 
 ---

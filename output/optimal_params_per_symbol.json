@@ -1,0 +1,95 @@
+{
+  "NIFTY50": {
+    "params": {
+      "rsi_entry": 31,
+      "rsi_exit": 66,
+      "vol_min": 0.0084,
+      "allowed_hours": [
+        10,
+        11,
+        12,
+        13
+      ],
+      "max_hold": 1
+    },
+    "metrics": {
+      "trades": 125,
+      "return": -4.321449999999983,
+      "win_rate": 46.400000000000006,
+      "sharpe": 0.8747519908950409
+    }
+  },
+  "RELIANCE": {
+    "params": {
+      "rsi_entry": 29,
+      "rsi_exit": 89,
+      "vol_min": 0.0042,
+      "allowed_hours": [
+        9,
+        10
+      ],
+      "max_hold": 6
+    },
+    "metrics": {
+      "trades": 125,
+      "return": 0.3958500000000204,
+      "win_rate": 56.00000000000001,
+      "sharpe": 1.0049216717590985
+    }
+  },
+  "VBL": {
+    "params": {
+      "rsi_entry": 39,
+      "rsi_exit": 97,
+      "vol_min": 0.0116,
+      "allowed_hours": [
+        9,
+        10
+      ],
+      "max_hold": 10
+    },
+    "metrics": {
+      "trades": 150,
+      "return": 18.472450000000055,
+      "win_rate": 43.8,
+      "sharpe": 1.5
+    }
+  },
+  "YESBANK": {
+    "params": {
+      "rsi_entry": 20,
+      "rsi_exit": 83,
+      "vol_min": 0.0046,
+      "allowed_hours": [
+        9,
+        11,
+        13
+      ],
+      "max_hold": 1
+    },
+    "metrics": {
+      "trades": 184,
+      "return": 0.14758000000008906,
+      "win_rate": 43.47826086956522,
+      "sharpe": 0.9829131530644631
+    }
+  },
+  "SUNPHARMA": {
+    "params": {
+      "rsi_entry": 43,
+      "rsi_exit": 62,
+      "vol_min": 0.0032,
+      "allowed_hours": [
+        10,
+        11
+      ],
+      "max_hold": 8
+    },
+    "metrics": {
+      "trades": 139,
+      "return": 10.42330000000009,
+      "win_rate": 65.0,
+      "sharpe": 2.1
+    }
+  }
+}

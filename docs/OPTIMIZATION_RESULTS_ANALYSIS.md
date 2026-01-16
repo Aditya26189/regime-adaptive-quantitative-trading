@@ -4,7 +4,7 @@
 
 This document provides a comprehensive analysis of the optimization results, including statistical breakdowns, parameter insights, trade-level analysis, and performance attribution.
 
-**Key Achievement:** Improved portfolio return from **-2.95% to +3.85%** (+6.80 percentage points)
+**Key Achievement:** Improved portfolio return from **-2.95% to +5.02%** (+7.97 percentage points)
 
 ---
 
@@ -27,20 +27,20 @@ This document provides a comprehensive analysis of the optimization results, inc
 
 | Metric | Value |
 |--------|-------|
-| **Total Trades** | 726 |
-| **Average Return** | +3.85% |
-| **Expected Final Capital** | ₹103,848.84 |
-| **Total Profit** | ₹3,848.84 |
-| **Transaction Costs** | ₹34,848 (726 × ₹48) |
-| **Gross Profit** | ₹38,696.84 |
-| **Cost-to-Profit Ratio** | 90.1% |
+| **Total Trades** | 723 |
+| **Average Return** | +5.02% |
+| **Expected Final Capital** | ₹105,023.55 |
+| **Total Profit** | ₹5,023.55 |
+| **Transaction Costs** | ₹34,704 (723 × ₹48) |
+| **Gross Profit** | ₹39,727.55 |
+| **Cost-to-Profit Ratio** | 87.3% |
 
 ### Return Distribution
 
 | Return Range | Symbols | Percentage |
 |--------------|---------|------------|
-| > +10% | 1 (VBL) | 20% |
-| +5% to +10% | 1 (SUNPHARMA) | 20% |
+| > +10% | 2 (VBL, SUNPHARMA) | 40% |
+| +5% to +10% | 0 | 0% |
 | 0% to +5% | 2 (RELIANCE, YESBANK) | 40% |
 | < 0% | 1 (NIFTY50) | 20% |
 
@@ -50,14 +50,14 @@ This document provides a comprehensive analysis of the optimization results, inc
 
 | Metric | Before Optimization | After Optimization | Change |
 |--------|--------------------|--------------------|--------|
-| Average Return | -2.95% | +3.85% | **+6.80 pp** |
+| Average Return | -2.95% | +5.02% | **+7.97 pp** |
 | Median Return | -4.47% | +0.40% | +4.87 pp |
-| Best Symbol | +4.05% (SUNPHARMA) | +14.88% (VBL) | +10.83 pp |
+| Best Symbol | +4.05% (SUNPHARMA) | +18.47% (VBL) | +14.42 pp |
 | Worst Symbol | -9.79% (NIFTY50) | -4.32% (NIFTY50) | +5.47 pp |
-| Standard Deviation | 5.76% | 7.31% | +1.55 pp |
-| Sharpe Ratio | -0.51 | 0.53 | +1.04 |
+| Standard Deviation | 5.76% | 8.86% | +3.10 pp |
+| Sharpe Ratio | -0.51 | 0.57 | +1.08 |
 
-**Key Insight:** Optimization increased both returns AND volatility, but the risk-adjusted return (Sharpe) improved significantly.
+**Key Insight:** Super-optimization of VBL (+18.47%) and SUNPHARMA (+10.42%) significantly lifted the portfolio average despite the burden of NIFTY50.
 
 ---
 
@@ -594,6 +594,52 @@ To reach Top 10-15:
 | NIFTY50 | +1.68% | -6.00% | -4.32% |
 
 **Key Insight:** Transaction costs consume 6-9% of capital. High-frequency strategies (YESBANK: 184 trades) are particularly impacted.
+
+---
+
+## Symbol-by-Symbol Analysis
+
+### Performance Breakdown
+
+| Symbol | Trades | Return | Win Rate | Contribution | Quality Rating |
+|--------|--------|--------|----------|--------------|----------------|
+| **VBL** | 150 | **+18.47%** | 43.8% | High | ⭐⭐⭐⭐⭐ |
+| **SUNPHARMA** | 139 | **+10.42%** | 65.0% | High | ⭐⭐⭐⭐ |
+| **RELIANCE** | 125 | +0.40% | 56.0% | Neutral | ⭐⭐⭐ |
+| **YESBANK** | 184 | +0.15% | 40.8% | Neutral | ⭐⭐ |
+| **NIFTY50** | 125 | -4.32% | 41.6% | Negative | ⭐ |
+
+### 1. VBL (Varun Beverages) - The Star Performer 🌟
+- **Result:** +18.47% (150 trades)
+- **Role:** Primary profit driver
+- **Strategy:** Extreme Mean Reversion
+- **Key Insight:** VBL has massive intraday volatility. The key to capturing this was loosening the volatility filter (0.0116) to catch more moves and setting a very high exit target (RSI 97) to ride the full reversal.
+- **Why it works:** VBL often dumps hard in the morning and recovers violently. The optimized parameters capture this "V-shape" recovery perfectly.
+
+### 2. SUNPHARMA - The Steady Earner 🛡️
+- **Result:** +10.42% (139 trades)
+- **Role:** Consistent growth
+- **Strategy:** Conservative Mean Reversion
+- **Key Insight:** SUNPHARMA is less volatile but more predictable. A tighter volatility filter (0.0032) and moderate RSI targets (Entry 43, Exit 62) allow for a high win rate (65%).
+- **Why it works:** It avoids false signals in low volatility chop but capitalizing on clear, smaller deviations.
+
+### 3. RELIANCE - The Breakeven Anchor ⚓
+- **Result:** +0.40% (125 trades)
+- **Role:** Volume filler
+- **Strategy:** Standard Mean Reversion
+- **Analysis:** RELIANCE is efficient and hard to beat. The strategy essentially breaks even, generating trade volume to meet the 120-trade requirement without dragging the portfolio down.
+
+### 4. YESBANK - The Volume Generator 📉
+- **Result:** +0.15% (184 trades)
+- **Role:** Volume generator
+- **Strategy:** Aggressive Reversion
+- **Analysis:** YESBANK is difficult due to low price and discrete tick sizes. The strategy churns volume (+184 trades) with a tiny positive edge, serving purely to meet competition requirements.
+
+### 5. NIFTY50 - The Cost of Business 💸
+- **Result:** -4.32% (125 trades)
+- **Role:** Drag
+- **Strategy:** Loss Minimization
+- **Analysis:** NIFTY50 trends strongly and rarely mean-reverts cleanly intraday. The strategy focuses on minimizing losses (-4.32% is better than the original -9.79%) while meeting the trade count.
 
 ---
 

@@ -73,5 +73,5 @@ This will:
 - **Worst Symbol:** NIFTY50 (-4.32%)
 
 ## Documentation
-- [Implementation Guide](docs/OPTIMIZATION_IMPLEMENTATION_DOCUMENTATION.md)
+- [Implementation Guide](docs/OPTIMIZATION_IMPLEMENTATION.md)
 - [Results Analysis](docs/OPTIMIZATION_RESULTS_ANALYSIS.md)

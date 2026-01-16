@@ -1,0 +1,30 @@
+{
+  "VBL": {
+    "params": {
+      "rsi_entry": 39,
+      "rsi_exit": 97,
+      "vol_min": 0.0116,
+      "allowed_hours": [
+        9,
+        10
+      ],
+      "max_hold": 10
+    },
+    "return": 18.472450000000055,
+    "trades": 150
+  },
+  "SUNPHARMA": {
+    "params": {
+      "rsi_entry": 43,
+      "rsi_exit": 62,
+      "vol_min": 0.0032,
+      "allowed_hours": [
+        10,
+        11
+      ],
+      "max_hold": 8
+    },
+    "return": 10.42330000000009,
+    "trades": 139
+  }
+}
