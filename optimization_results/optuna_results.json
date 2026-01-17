@@ -1,0 +1,86 @@
+{
+  "RELIANCE": {
+    "symbol": "RELIANCE",
+    "params": {
+      "rsi_period": 5,
+      "rsi_oversold": 34,
+      "rsi_overbought": 84,
+      "ker_period": 18,
+      "ker_threshold": 0.29361118426546196,
+      "vol_min": 0.004807901366051648,
+      "vol_max": 0.017613762547568974,
+      "max_hold": 18
+    },
+    "score": -Infinity,
+    "trials": 200
+  },
+  "YESBANK": {
+    "symbol": "YESBANK",
+    "params": {
+      "rsi_period": 6,
+      "rsi_oversold": 39,
+      "rsi_overbought": 86,
+      "ker_period": 15,
+      "ker_threshold": 0.29361118426546196,
+      "vol_min": 0.003183923284706837,
+      "vol_max": 0.018775434790932966,
+      "max_hold": 18
+    },
+    "score": -Infinity,
+    "trials": 200
+  },
+  "SUNPHARMA": {
+    "symbol": "SUNPHARMA",
+    "params": {
+      "rsi_period": 4,
+      "rsi_oversold": 34,
+      "rsi_overbought": 80,
+      "ker_period": 16,
+      "ker_threshold": 0.36240745617697456,
+      "vol_min": 0.0040279287643706346,
+      "vol_max": 0.017032926425886982,
+      "max_hold": 14
+    },
+    "score": -Infinity,
+    "trials": 200
+  },
+  "VBL": {
+    "symbol": "VBL",
+    "params": {
+      "rsi_period": 6,
+      "rsi_oversold": 39,
+      "rsi_overbought": 82,
+      "ker_period": 22,
+      "ker_threshold": 0.37800932022121825,
+      "vol_min": 0.0039638958863878505,
+      "vol_max": 0.024646688973455958,
+      "max_hold": 18,
+      "use_ensemble": false
+    },
+    "score": -Infinity,
+    "trials": 200
+  },
+  "NIFTY50": {
+    "symbol": "NIFTY50",
+    "params": {
+      "ema_fast": 10,
+      "ema_slow": 91,
+      "momentum_period": 10,
+      "momentum_threshold": 0.1489903599616249,
+      "ema_diff_threshold": 0.24796353808256913,
+      "vol_min": 0.015687286232948627,
+      "max_hold": 4,
+      "vol_period": 14,
+      "allowed_hours": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ]
+    },
+    "score": 0.1412180693155745,
+    "trials": 200
+  }
+}

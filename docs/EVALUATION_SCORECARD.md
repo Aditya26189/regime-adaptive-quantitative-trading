@@ -75,20 +75,20 @@ This document tracks all optimization phases against the official evaluation cri
 
 ---
 
-### Phase 5: Ultra Fine-Tuning (FINAL)
+### Phase 5: Ultra Fine-Tuning + Optuna (FINAL)
 
-**Strategy Logic:** Local perturbation search around optima to squeeze final alpha.
+**Strategy Logic:** Local perturbation + Bayesian optimization with Optuna.
 
 | Symbol | Sharpe | Return | Trades | Avg Win | Avg Loss | Win Rate | Max DD |
 |--------|--------|--------|--------|---------|----------|----------|--------|
-| **NIFTY50** | **-0.020** | **-0.94%** | 125 | ₹320 | ₹-225 | 38% | -2.8% |
+| **NIFTY50** | **+0.006** | **+0.23%** | 132 | ₹320 | ₹-225 | 42% | -2.5% |
 | VBL | 1.574 | 12.00% | 127 | ₹580 | ₹-260 | 54% | -2.2% |
 | RELIANCE | 1.644 | 7.12% | 121 | ₹540 | ₹-280 | 54% | -1.9% |
 | SUNPHARMA | 1.840 | 7.53% | 144 | ₹380 | ₹-190 | 56% | -1.8% |
 | YESBANK | 1.278 | 10.02% | 122 | ₹610 | ₹-350 | 52% | -3.1% |
-| **Portfolio** | **1.263** | **7.15%** | **639** | **₹486** | **₹-261** | **51%** | **-2.8%** |
+| **Portfolio** | **1.268** | **7.38%** | **646** | **₹486** | **₹-261** | **52%** | **-2.5%** |
 
-**Improvement:** NIFTY50 Sharpe +0.027, Portfolio +0.005
+**Improvement:** NIFTY50 NOW POSITIVE. Optuna found better parameter combination.
 
 ---
 

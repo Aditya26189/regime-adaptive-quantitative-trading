@@ -1,5 +1,5 @@
 {
-  "NIFTY50_TREND": {
+  "params": {
     "ema_fast": 9,
     "ema_slow": 38,
     "momentum_period": 9,
@@ -22,6 +22,5 @@
     "return": 0.2290999999999258,
     "trades": 132,
     "win_rate": 41.66666666666667
-  },
-  "timestamp": "2026-01-17T06:00:24.354485"
+  }
 }
