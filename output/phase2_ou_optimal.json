@@ -1,0 +1,114 @@
+{
+  "YESBANK": {
+    "rsi_entry": 15,
+    "rsi_exit": 85,
+    "sharpe": -2.796588891115588,
+    "trades": 89,
+    "improvement": -0.8808936139542776,
+    "params": {
+      "ker_period": 10,
+      "rsi_period": 2,
+      "rsi_entry": 15,
+      "rsi_exit": 85,
+      "vol_min_pct": 0.005,
+      "max_hold_bars": 10,
+      "allowed_hours": [
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "max_return_cap": 5.0,
+      "ker_threshold_meanrev": 0.3,
+      "ker_threshold_trend": 0.5,
+      "ema_fast": 8,
+      "ema_slow": 21,
+      "trend_pulse_mult": 0.4
+    }
+  },
+  "RELIANCE": {
+    "rsi_entry": 15,
+    "rsi_exit": 85,
+    "sharpe": -1.3167288350197741,
+    "trades": 88,
+    "improvement": 0.37013704496494637,
+    "params": {
+      "ker_period": 10,
+      "rsi_period": 2,
+      "rsi_entry": 15,
+      "rsi_exit": 85,
+      "vol_min_pct": 0.005,
+      "max_hold_bars": 10,
+      "allowed_hours": [
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "max_return_cap": 5.0,
+      "ker_threshold_meanrev": 0.3,
+      "ker_threshold_trend": 0.5,
+      "ema_fast": 8,
+      "ema_slow": 21,
+      "trend_pulse_mult": 0.4
+    }
+  },
+  "VBL": {
+    "rsi_entry": 15,
+    "rsi_exit": 85,
+    "sharpe": -0.8137936896423759,
+    "trades": 96,
+    "improvement": 0.08039881684117989,
+    "params": {
+      "ker_period": 10,
+      "rsi_period": 2,
+      "rsi_entry": 15,
+      "rsi_exit": 85,
+      "vol_min_pct": 0.005,
+      "max_hold_bars": 10,
+      "allowed_hours": [
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "max_return_cap": 5.0,
+      "ker_threshold_meanrev": 0.3,
+      "ker_threshold_trend": 0.5,
+      "ema_fast": 8,
+      "ema_slow": 21,
+      "trend_pulse_mult": 0.4
+    }
+  },
+  "SUNPHARMA": {
+    "rsi_entry": 15,
+    "rsi_exit": 85,
+    "sharpe": 1.8326789179061558,
+    "trades": 93,
+    "improvement": 1.2453249895095433,
+    "params": {
+      "ker_period": 10,
+      "rsi_period": 2,
+      "rsi_entry": 15,
+      "rsi_exit": 85,
+      "vol_min_pct": 0.005,
+      "max_hold_bars": 10,
+      "allowed_hours": [
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "max_return_cap": 5.0,
+      "ker_threshold_meanrev": 0.3,
+      "ker_threshold_trend": 0.5,
+      "ema_fast": 8,
+      "ema_slow": 21,
+      "trend_pulse_mult": 0.4
+    }
+  }
+}

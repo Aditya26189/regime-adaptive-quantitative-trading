@@ -1,0 +1,21 @@
+{
+  "sharpe": 1.653485506011211,
+  "trades": 128,
+  "return": 1.2092938780299508e+39,
+  "params": {
+    "ema_fast": 8,
+    "ema_slow": 21,
+    "momentum_threshold": 0.002,
+    "vol_min_pct": 0.003,
+    "max_hold_bars": 6,
+    "stop_loss_pct": 2.0,
+    "allowed_hours": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ]
+  }
+}

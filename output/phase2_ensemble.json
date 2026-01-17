@@ -1,0 +1,16 @@
+{
+  "sharpe": -0.13653068294618326,
+  "trades": 433,
+  "config": {
+    "min_agreement": 1,
+    "max_hold_bars": 10,
+    "allowed_hours": [
+      10,
+      11,
+      12,
+      13,
+      14
+    ]
+  },
+  "return_pct": 4.091740271963748e+127
+}

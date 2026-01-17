@@ -1,0 +1,51 @@
+{
+  "timestamp": "2026-01-17T19:04:30.878200",
+  "submission_folder": "submission_3",
+  "strategy_number": 3,
+  "symbol_results": {
+    "NIFTY50": {
+      "filepath": "submission_3/STRATEGY3_NSE_NIFTY50-INDEX_trades.csv",
+      "trades": 126,
+      "sharpe": 1.6665701782905364,
+      "return_pct": 2.475928906185783e+35,
+      "win_rate": 57.936507936507944,
+      "passes_constraints": true
+    },
+    "RELIANCE": {
+      "filepath": "submission_3/STRATEGY3_NSE_RELIANCE-EQ_trades.csv",
+      "trades": 128,
+      "sharpe": 2.9845207487882917,
+      "return_pct": 2.475928906185783e+35,
+      "win_rate": 60.15625,
+      "passes_constraints": true
+    },
+    "VBL": {
+      "filepath": "submission_3/STRATEGY3_NSE_VBL-EQ_trades.csv",
+      "trades": 237,
+      "sharpe": 2.0917388829592953,
+      "return_pct": 6.869071784240442e+62,
+      "win_rate": 54.85232067510548,
+      "passes_constraints": true
+    },
+    "YESBANK": {
+      "filepath": "submission_3/STRATEGY3_NSE_YESBANK-EQ_trades.csv",
+      "trades": 132,
+      "sharpe": 1.6575160722165285,
+      "return_pct": 6.869071784240442e+62,
+      "win_rate": 50.75757575757576,
+      "passes_constraints": true
+    },
+    "SUNPHARMA": {
+      "filepath": "submission_3/STRATEGY3_NSE_SUNPHARMA-EQ_trades.csv",
+      "trades": 134,
+      "sharpe": 4.272565705404814,
+      "return_pct": 2.475928906185783e+35,
+      "win_rate": 64.92537313432835,
+      "passes_constraints": true
+    }
+  },
+  "portfolio_trades": 757,
+  "portfolio_sharpe": 2.534582317531893,
+  "constraints_met": true,
+  "verdict": "READY"
+}

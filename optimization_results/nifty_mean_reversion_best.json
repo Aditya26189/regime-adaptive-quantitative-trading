@@ -1,0 +1,27 @@
+{
+  "params": {
+    "rsi_entry": 20,
+    "rsi_exit": 75,
+    "ker_period": 12,
+    "ker_max": 0.28157156722311233,
+    "vol_min": 0.02134275502460764,
+    "max_hold": 15,
+    "position_size": 0.8761857192784372,
+    "rsi_period": 2,
+    "vol_period": 14,
+    "allowed_hours": [
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ]
+  },
+  "metrics": {
+    "sharpe": -0.1878729764010416,
+    "return": -5.078399999999987,
+    "trades": 124,
+    "win_rate": 43.54838709677419
+  }
+}

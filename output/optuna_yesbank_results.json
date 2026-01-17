@@ -1,0 +1,10 @@
+{
+  "ker_period": 10,
+  "rsi_period": 4,
+  "rsi_entry": 16,
+  "rsi_exit": 81,
+  "vol_min_pct": 0.007907467298130426,
+  "max_hold_bars": 11,
+  "ker_threshold_meanrev": 0.21351428150386811,
+  "ker_threshold_trend": 0.5734366308301602
+}

@@ -1,0 +1,32 @@
+{
+  "portfolio_sharpe": 1.0916199485608575,
+  "phase1_sharpe": 0.5760549817609923,
+  "improvement": 0.5155649667998652,
+  "symbol_configs": {
+    "NIFTY50": {
+      "source": "Phase1",
+      "sharpe": 1.653485506011211,
+      "trades": 128
+    },
+    "RELIANCE": {
+      "source": "Phase1",
+      "sharpe": -1.1725849862327065,
+      "trades": 242
+    },
+    "VBL": {
+      "source": "Regime_Switching",
+      "sharpe": 1.7009846083507956,
+      "trades": 225
+    },
+    "YESBANK": {
+      "source": "Phase1",
+      "sharpe": 0.14421461467498822,
+      "trades": 174
+    },
+    "SUNPHARMA": {
+      "source": "Phase1",
+      "sharpe": 3.132,
+      "trades": 134
+    }
+  }
+}

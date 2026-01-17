@@ -1,0 +1,53 @@
+{
+  "symbol_results": {
+    "SUNPHARMA": {
+      "train_sharpe": 3.4148972109159113,
+      "test_sharpe": 2.753256232031135,
+      "train_trades": 89,
+      "test_trades": 41,
+      "degradation": 0.6616409788847761,
+      "degradation_pct": 19.375136000281458,
+      "status": "\u26a0\ufe0f  MODERATE CONCERN"
+    },
+    "RELIANCE": {
+      "train_sharpe": 1.7906973863896563,
+      "test_sharpe": 1.438667054839261,
+      "train_trades": 91,
+      "test_trades": 32,
+      "degradation": 0.3520303315503952,
+      "degradation_pct": 19.658839859042118,
+      "status": "\u26a0\ufe0f  MODERATE CONCERN"
+    },
+    "VBL": {
+      "train_sharpe": -0.7513095962383238,
+      "test_sharpe": 3.854351724010798,
+      "train_trades": 160,
+      "test_trades": 72,
+      "degradation": -4.605661320249122,
+      "degradation_pct": 613.0177683486096,
+      "status": "\ud83d\udea8 SEVERE OVERFITTING"
+    },
+    "YESBANK": {
+      "train_sharpe": 1.8566428816134886,
+      "test_sharpe": -1.8050802344732397,
+      "train_trades": 91,
+      "test_trades": 34,
+      "degradation": 3.661723116086728,
+      "degradation_pct": 197.2228020988377,
+      "status": "\ud83d\udea8 SEVERE OVERFITTING"
+    },
+    "NIFTY50": {
+      "train_sharpe": -2.877207913009672,
+      "test_sharpe": 3.286282225840445,
+      "train_trades": 72,
+      "test_trades": 31,
+      "degradation": -6.163490138850117,
+      "degradation_pct": 214.21775294656635,
+      "status": "\ud83d\udea8 SEVERE OVERFITTING"
+    }
+  },
+  "portfolio_train": 0.686743993934212,
+  "portfolio_test": 1.90549540044968,
+  "portfolio_degradation_pct": -177.46808378090026,
+  "verdict": "DO_NOT_SUBMIT"
+}

@@ -1,0 +1,44 @@
+{
+  "timestamp": "2026-01-17T18:18:59.772936",
+  "portfolio_sharpe": 2.558837078182512,
+  "total_trades": 757,
+  "constraints_met": true,
+  "config_source": "portfolio_optimization",
+  "symbol_breakdown": {
+    "NIFTY50": {
+      "sharpe_ratio": 1.6665972300683083,
+      "total_trades": 126,
+      "total_return_pct": 3.520088561007877e+38,
+      "win_rate": 0,
+      "max_drawdown_pct": 0
+    },
+    "RELIANCE": {
+      "sharpe_ratio": 2.9852366939942,
+      "total_trades": 128,
+      "total_return_pct": 13.818465589199153,
+      "win_rate": 0,
+      "max_drawdown_pct": 0
+    },
+    "VBL": {
+      "sharpe_ratio": 2.0917388829592953,
+      "total_trades": 237,
+      "total_return_pct": 2.1701198714986015e+65,
+      "win_rate": 0,
+      "max_drawdown_pct": 0
+    },
+    "YESBANK": {
+      "sharpe_ratio": 1.7586623320359476,
+      "total_trades": 132,
+      "total_return_pct": 14.748306437945619,
+      "win_rate": 0,
+      "max_drawdown_pct": 0
+    },
+    "SUNPHARMA": {
+      "sharpe_ratio": 4.29195025185481,
+      "total_trades": 134,
+      "total_return_pct": 16.603154407451832,
+      "win_rate": 0,
+      "max_drawdown_pct": 0
+    }
+  }
+}

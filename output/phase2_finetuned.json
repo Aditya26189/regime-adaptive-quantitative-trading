@@ -1,0 +1,12 @@
+{
+  "YESBANK": {
+    "sharpe": -1.7893915452375502,
+    "params": {
+      "rsi_period": 2,
+      "rsi_entry": 30,
+      "rsi_exit": 72,
+      "vol_min_pct": 0.005196189783662628,
+      "max_hold_bars": 10
+    }
+  }
+}

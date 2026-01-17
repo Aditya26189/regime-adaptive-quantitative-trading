@@ -1,0 +1,67 @@
+{
+  "timestamp": "20260117_172559",
+  "baseline_portfolio": 1.486,
+  "optimized_portfolio": 1.4862,
+  "improvement": 0.00019999999999997797,
+  "results": {
+    "SUNPHARMA_BOOSTED": {
+      "sharpe": 0.022187929557896866,
+      "params": {
+        "rsi_period": 3,
+        "rsi_entry": 34,
+        "rsi_exit": 67,
+        "max_hold": 6,
+        "vol_min": 0.0037116538946455465,
+        "profit_target": false,
+        "profit_pct": 3.896454421141934,
+        "dynamic_exit": false,
+        "exit_mult": 1.068051572672623
+      },
+      "improvement": -3.109812070442103,
+      "trials": 200
+    },
+    "PAIRS_VBL": {
+      "sharpe": 1.190850821406891,
+      "params": {
+        "window": 52,
+        "entry": -0.7091656742292309,
+        "exit": 0.06926851271172076,
+        "max_hold": 14
+      }
+    },
+    "PAIRS_RELIANCE": {
+      "sharpe": -0.11545677915389702,
+      "params": {
+        "window": 36,
+        "entry": -0.9869507779697405,
+        "exit": -0.4618713098838572,
+        "max_hold": 4
+      }
+    },
+    "PAIRS_SUNPHARMA": {
+      "sharpe": 2.1777545696103715,
+      "params": {
+        "window": 22,
+        "entry": -0.38984993516299343,
+        "exit": -0.001280443347913024,
+        "max_hold": 8
+      }
+    },
+    "PAIRS_YESBANK": {
+      "sharpe": 0.23910210818781083,
+      "params": {
+        "window": 41,
+        "entry": -0.3022767159918551,
+        "exit": 0.4723068499374927,
+        "max_hold": 15
+      }
+    }
+  },
+  "final_sharpes": {
+    "VBL": 1.574,
+    "RELIANCE": 1.683,
+    "SUNPHARMA": 3.132,
+    "YESBANK": 1.036,
+    "NIFTY50": 0.006
+  }
+}

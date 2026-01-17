@@ -1,0 +1,93 @@
+{
+  "pairs_VBL": {
+    "sharpe": -999.0,
+    "params": {
+      "beta_window": 83,
+      "entry_z": -1.6196065859511404,
+      "exit_z": 0.5205071193390218
+    }
+  },
+  "pairs_RELIANCE": {
+    "sharpe": -999.0,
+    "params": {
+      "beta_window": 49,
+      "entry_z": -1.8641586342396326,
+      "exit_z": 0.11908918437803728
+    }
+  },
+  "pairs_YESBANK": {
+    "sharpe": -999.0,
+    "params": {
+      "beta_window": 78,
+      "entry_z": -1.493358292091784,
+      "exit_z": 0.28074442836254665
+    }
+  },
+  "pairs_SUNPHARMA": {
+    "sharpe": -999.0,
+    "params": {
+      "beta_window": 46,
+      "entry_z": -2.4650447189892235,
+      "exit_z": 0.026674187660318482
+    }
+  },
+  "volume_VBL": {
+    "sharpe": -999.0,
+    "params": {
+      "vwma_period": 16,
+      "mfi_period": 19,
+      "mfi_entry": 23,
+      "mfi_exit": 58
+    }
+  },
+  "volume_RELIANCE": {
+    "sharpe": -999.0,
+    "params": {
+      "vwma_period": 27,
+      "mfi_period": 7,
+      "mfi_entry": 29,
+      "mfi_exit": 62
+    }
+  },
+  "volume_YESBANK": {
+    "sharpe": -999.0,
+    "params": {
+      "vwma_period": 30,
+      "mfi_period": 18,
+      "mfi_entry": 26,
+      "mfi_exit": 72
+    }
+  },
+  "volume_SUNPHARMA": {
+    "sharpe": -999.0,
+    "params": {
+      "vwma_period": 48,
+      "mfi_period": 6,
+      "mfi_entry": 45,
+      "mfi_exit": 72
+    }
+  },
+  "sunpharma_boost": {
+    "sharpe": 1.8562899759980176,
+    "params": {
+      "rsi_period": 4,
+      "rsi_entry": 35,
+      "rsi_exit": 72,
+      "vol_min_pct": 0.005,
+      "max_hold_bars": 12,
+      "ker_period": 15,
+      "ker_threshold_meanrev": 0.37005934862114326
+    }
+  },
+  "ensemble": {
+    "sharpe": -0.5776525710077166,
+    "params": {
+      "rsi_period": 4,
+      "rsi_entry": 33,
+      "rsi_exit": 75,
+      "vol_min_pct": 0.005,
+      "max_hold_bars": 6,
+      "min_agreement": 2
+    }
+  }
+}

@@ -46,13 +46,13 @@ def optimize_nifty_optuna(n_trials: int = 200):
     
     def objective(trial):
         params = {
-            'ema_fast': trial.suggest_int('ema_fast', 3, 12),
-            'ema_slow': trial.suggest_int('ema_slow', 20, 50),
+            'ema_fast': trial.suggest_int('ema_fast', 3, 15),
+            'ema_slow': trial.suggest_int('ema_slow', 15, 60),
             'momentum_period': trial.suggest_int('momentum_period', 3, 15),
-            'momentum_threshold': trial.suggest_float('momentum_threshold', 0.05, 0.5),
-            'ema_diff_threshold': trial.suggest_float('ema_diff_threshold', 0.02, 0.2),
-            'vol_min': trial.suggest_float('vol_min', 0.0, 0.2),
-            'max_hold': trial.suggest_int('max_hold', 4, 20),
+            'momentum_threshold': trial.suggest_float('momentum_threshold', 0.05, 0.3),
+            'ema_diff_threshold': trial.suggest_float('ema_diff_threshold', 0.01, 0.15),
+            'vol_min': trial.suggest_float('vol_min', 0.0, 0.05),
+            'max_hold': trial.suggest_int('max_hold', 8, 25),
             'vol_period': 14,
             'allowed_hours': [9, 10, 11, 12, 13, 14],
         }
@@ -156,7 +156,7 @@ def optimize_nifty_optuna(n_trials: int = 200):
 if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument('--trials', type=int, default=200)
+    parser.add_argument('--trials', type=int, default=300)
     args = parser.parse_args()
     
     optimize_nifty_optuna(n_trials=args.trials)

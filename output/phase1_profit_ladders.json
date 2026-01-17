@@ -1,0 +1,91 @@
+{
+  "RELIANCE": {
+    "config": "baseline",
+    "sharpe": -1.6868658799847205,
+    "trades": 137,
+    "return_pct": -6.759499999999926,
+    "params": {
+      "ker_period": 10,
+      "rsi_period": 2,
+      "rsi_entry": 30,
+      "rsi_exit": 70,
+      "vol_min_pct": 0.005,
+      "max_hold_bars": 10,
+      "allowed_hours": [
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "max_return_cap": 5.0,
+      "use_adaptive_hold": true,
+      "use_profit_ladder": false
+    }
+  },
+  "VBL": {
+    "config": "ladder_1",
+    "sharpe": -0.8768402256485314,
+    "trades": 134,
+    "return_pct": -5.632450000000026,
+    "params": {
+      "ker_period": 10,
+      "rsi_period": 2,
+      "rsi_entry": 30,
+      "rsi_exit": 70,
+      "vol_min_pct": 0.005,
+      "max_hold_bars": 10,
+      "allowed_hours": [
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "max_return_cap": 5.0,
+      "use_adaptive_hold": true,
+      "use_profit_ladder": true,
+      "ladder_thresholds": [
+        {
+          "rsi_threshold": 55,
+          "exit_fraction": 0.5,
+          "reason": "first_target"
+        },
+        {
+          "rsi_threshold": 65,
+          "exit_fraction": 0.3,
+          "reason": "second_target"
+        },
+        {
+          "rsi_threshold": 75,
+          "exit_fraction": 0.2,
+          "reason": "peak_target"
+        }
+      ]
+    }
+  },
+  "YESBANK": {
+    "config": "baseline",
+    "sharpe": -1.9156952771613103,
+    "trades": 120,
+    "return_pct": -9.64522000000006,
+    "params": {
+      "ker_period": 10,
+      "rsi_period": 2,
+      "rsi_entry": 30,
+      "rsi_exit": 70,
+      "vol_min_pct": 0.005,
+      "max_hold_bars": 10,
+      "allowed_hours": [
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "max_return_cap": 5.0,
+      "use_adaptive_hold": true,
+      "use_profit_ladder": false
+    }
+  }
+}
