@@ -14,6 +14,7 @@ from src.strategies.hybrid_adaptive_v2 import HybridAdaptiveStrategyV2
 from src.strategies.hybrid_adaptive import HybridAdaptiveStrategy
 from src.strategies.ensemble_wrapper import EnsembleStrategy
 from src.strategies.nifty_trend_ladder import NIFTYTrendLadderStrategy
+from src.strategies.yesbank_emergency import YesBankEmergencyStrategy
 from src.strategies.regime_switching_strategy import RegimeSwitchingStrategy
 
 ROLL_NUMBER = '23ME3EP03'
@@ -178,25 +179,19 @@ for symbol, config in SYMBOLS.items():
         strategy = HybridAdaptiveStrategyV2(params)
         trades, metrics = strategy.backtest(df, initial_capital=CAPITAL_PER_SYMBOL)
         
+
     elif config['strategy'] == 'baseline_boosted':
-        # YESBANK Optimized (Rescue Tuned 3)
-        # Final Push for 120 trades
+        # YESBANK: EMERGENCY OPTION B (Ultra-Conservative Baseline)
+        # Replacing failed Hybrid model with robust RSI(14) logic
         params = {
-            "ker_period": 10,
-            "rsi_period": 4,
-            "rsi_entry": 40, # High Entry
-            "rsi_exit": 60, # Tighter Exit
-            "vol_min_pct": 0.001, # Almost no filter
-            "max_hold_bars": 4, # Very fast turnover
-            "ker_threshold_meanrev": 0.21,
-            "ker_threshold_trend": 0.57,
-            "ema_fast": 8,
-            "ema_slow": 21,
-            "trend_pulse_mult": 0.4,
-            "allowed_hours": [9, 10, 11, 12, 13, 14, 15],
-            "max_return_cap": 5.0
+            "rsi_period": 14,
+            "rsi_entry": 45,  # Much more aggressive (was 30)
+            "rsi_exit": 55,   # Fast profit taking (was 60)
+            "vol_min_pct": 0.001, # Minimal filter
+            "vol_max_pct": 0.05, # Wider range
+            "max_hold_bars": 4 # High turnover (was 10)
         }
-        strategy = HybridAdaptiveStrategy(params)
+        strategy = YesBankEmergencyStrategy(params)
         trades, metrics = strategy.backtest(df, initial_capital=CAPITAL_PER_SYMBOL)
         
     elif config['strategy'] == 'nifty_trend_ladder':
@@ -251,7 +246,7 @@ for t in sorted(all_trades, key=lambda x: (x['symbol'], str(x['entry_time']))):
     
     final_rows.append({
         'student_roll_number': ROLL_NUMBER,
-        'strategy_submission_number': 5, # Submission 5
+        'strategy_submission_number': 5, # Submission 5 (Final)
         'symbol': t['symbol'],
         'timeframe': '60',
         'entry_trade_time': t['entry_time'],
@@ -266,7 +261,7 @@ for t in sorted(all_trades, key=lambda x: (x['symbol'], str(x['entry_time']))):
 # Save combined result (Portfolio View)
 submission_df = pd.DataFrame(final_rows)
 timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-combined_file = f"submission_5/FINAL_PORTFOLIO_TRACKER_{timestamp}.csv"
+combined_file = f"submission_new/FINAL_PORTFOLIO_TRACKER_{timestamp}.csv"
 submission_df.to_csv(combined_file, index=False)
 
 print(f"\n✅ Combined: {combined_file}")
@@ -295,7 +290,7 @@ for symbol_code, symbol_name in symbols_map.items():
         
     symbol_df['cumulative_capital_after_trade'] = cap_series
     
-    filename = f"submission_5/STRATEGY5_{symbol_code.replace(':', '_')}_trades.csv"
+    filename = f"submission_new/STRATEGY5_{symbol_code.replace(':', '_')}_trades.csv"
     symbol_df.to_csv(filename, index=False)
     print(f"✅ {symbol_name:12} {len(symbol_df):3} trades → {filename}")
 

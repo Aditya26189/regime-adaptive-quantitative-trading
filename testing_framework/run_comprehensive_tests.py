@@ -19,6 +19,7 @@ sys.path.insert(0, project_root)
 # Import strategies
 from src.strategies.hybrid_adaptive import HybridAdaptiveStrategy
 from src.strategies.hybrid_adaptive_v2 import HybridAdaptiveStrategyV2
+from src.strategies.yesbank_emergency import YesBankEmergencyStrategy
 from src.strategies.nifty_trend_ladder import NIFTYTrendLadderStrategy
 from src.strategies.regime_switching_strategy import RegimeSwitchingStrategy
 
@@ -104,21 +105,14 @@ SYMBOLS = {
     'YESBANK': {
         'file': 'data/raw/NSE_YESBANK_EQ_1hour.csv',
         'code': 'NSE:YESBANK-EQ',
-        'strategy': 'baseline_boosted',
+        'strategy': 'yesbank_emergency', # NEW KEY
         'params': {
-            "ker_period": 10,
-            "rsi_period": 2,
-            "rsi_entry": 30,
-            "rsi_exit": 70,
-            "vol_min_pct": 0.005,
-            "max_hold_bars": 10,
-            "allowed_hours": [9, 10, 11, 12, 13, 14, 15],
-            "max_return_cap": 5.0,
-            "ker_threshold_meanrev": 0.30,
-            "ker_threshold_trend": 0.50,
-            "ema_fast": 8,
-            "ema_slow": 21,
-            "trend_pulse_mult": 0.4
+            "rsi_period": 14,
+            "rsi_entry": 45,  # Relaxed
+            "rsi_exit": 55,   # Relaxed
+            "vol_min_pct": 0.001,
+            "vol_max_pct": 0.05,
+            "max_hold_bars": 4
         }
     },
     'NIFTY50': {
@@ -268,14 +262,101 @@ def main():
             results['tests'][symbol]['overflows'] = []
         
     # Generate Report
-    with open('output/COMPREHENSIVE_TESTING_RESULTS.md', 'w') as f:
+    with open('output/COMPREHENSIVE_TESTING_RESULTS.md', 'w', encoding='utf-8') as f:
         f.write("# Comprehensive Test Results\n\n")
         f.write(f"Generated: {datetime.now()}\n\n")
         f.write("## Test 1: Overfitting Check\n")
         for sym, res in results['tests'].items():
             f.write(f"- **{sym}**: Train {res['train_sharpe']:.2f} | Test {res['test_sharpe']:.2f}\n")
+            if 'overflows' in res and res['overflows']:
+                 f.write(f"  - 🚨 OVERFLOWS: {res['overflows']}\n")
             
     print("\n✅ Testing Complete. Report saved to output/COMPREHENSIVE_TESTING_RESULTS.md")
 
 if __name__ == "__main__":
-    main()
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--test-1-only', action='store_true', help='Run only Test 1')
+    args = parser.parse_args()
+    
+    # Simple modification to main() would be needed for clean arg support,
+    # but for now we'll just check args in the calls or modify main logic.
+    # Re-calling main with a filter is better.
+    
+    print("="*70)
+    print("RUNNING COMPREHENSIVE TESTING FRAMEWORK")
+    print("="*70)
+    
+    results = {
+        'timestamp': str(datetime.now()),
+        'tests': {}
+    }
+    
+    for symbol, config in SYMBOLS.items():
+        print(f"\n🔬 Testing {symbol}...")
+        
+        # Load Data
+        df = pd.read_csv(config['file'])
+        df['datetime'] = pd.to_datetime(df['datetime'])
+        df = df.sort_values('datetime').reset_index(drop=True)
+        
+        # Instantiate Strategy Class
+        strat_name = config['strategy']
+        params = config['params']
+        
+        if strat_name == 'regime_switching':
+            strat_class = HybridAdaptiveStrategy # Mapped
+            
+        elif strat_name == 'nifty_trend_ladder':
+            strat_class = NIFTYTrendLadderStrategy
+        elif strat_name == 'yesbank_emergency':
+             strat_class = YesBankEmergencyStrategy
+        elif strat_name == 'baseline_boosted':
+             strat_class = HybridAdaptiveStrategy
+        else:
+             strat_class = HybridAdaptiveStrategyV2 
+             
+        # Test 1: Train/Test
+        train_s, test_s = run_test_train_test_split(df, strat_class, params)
+        print(f"  Test 1 (Overfitting): Train={train_s:.2f}, Test={test_s:.2f} -> ", end="")
+        if test_s < train_s * 0.6:
+            print("🚨 FAIL")
+        elif test_s > train_s:
+            print("✅ PASS (Robust)")
+        else:
+            print("⚠️ WARN")
+            
+        results['tests'][symbol] = {
+            'train_sharpe': train_s,
+            'test_sharpe': test_s
+        }
+
+        if args.test_1_only:
+            continue
+
+        # Test 6: Overflow Check
+        strategy = strat_class(params)
+        if 'backtest_with_ladder_exits' in dir(strategy):
+            trades, _ = strategy.backtest_with_ladder_exits(df, initial_capital=CAPITAL_PER_SYMBOL)
+        else:
+            trades, _ = strategy.backtest(df, initial_capital=CAPITAL_PER_SYMBOL)
+        
+        overflows = check_overflows(pd.DataFrame(trades))
+        if overflows:
+            print(f"  🚨 Test 6 (Overflows): FAIL - {overflows}")
+            results['tests'][symbol]['overflows'] = overflows
+        else:
+            print(f"  Test 6 (Overflows): ✅ PASS")
+            results['tests'][symbol]['overflows'] = []
+        
+    # Generate Report
+    with open('output/COMPREHENSIVE_TESTING_RESULTS.md', 'w', encoding='utf-8') as f:
+        f.write("# Comprehensive Test Results\n\n")
+        f.write(f"Generated: {datetime.now()}\n\n")
+        f.write("## Test 1: Overfitting Check\n")
+        for sym, res in results['tests'].items():
+            f.write(f"- **{sym}**: Train {res['train_sharpe']:.2f} | Test {res['test_sharpe']:.2f}\n")
+            if 'overflows' in res and res['overflows']:
+                 f.write(f"  - 🚨 OVERFLOWS: {res['overflows']}\n")
+            
+    print("\n✅ Testing Complete. Report saved to output/COMPREHENSIVE_TESTING_RESULTS.md")
