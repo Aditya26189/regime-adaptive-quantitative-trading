@@ -1,6 +1,5 @@
 """
-Focused NIFTY50 Optimization
-Specialized Optuna optimizer for NIFTY50 trend strategy only.
+NIFTY50 Mean Reversion Optimization using Optuna
 """
 
 import optuna
@@ -16,7 +15,7 @@ warnings.filterwarnings('ignore')
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from src.strategies.nifty_trend_strategy import generate_nifty_trend_signals
+from src.strategies.nifty_mean_reversion import generate_nifty_mean_reversion_signals
 
 
 class NpEncoder(json.JSONEncoder):
@@ -30,11 +29,11 @@ class NpEncoder(json.JSONEncoder):
         return super(NpEncoder, self).default(obj)
 
 
-def optimize_nifty_optuna(n_trials: int = 200):
-    """Optimize NIFTY50 using Optuna with direct Sharpe maximization."""
+def optimize_nifty_mean_reversion(n_trials: int = 300):
+    """Optimize NIFTY50 using mean reversion with Optuna."""
     
     print("="*70)
-    print("NIFTY50 OPTUNA OPTIMIZATION (SHARPE-FOCUSED)")
+    print("NIFTY50 MEAN REVERSION OPTIMIZATION (SHARPE-FOCUSED)")
     print("="*70)
     print(f"Trials: {n_trials}")
     print(f"Started: {datetime.now().strftime('%H:%M:%S')}")
@@ -46,23 +45,24 @@ def optimize_nifty_optuna(n_trials: int = 200):
     
     def objective(trial):
         params = {
-            'ema_fast': trial.suggest_int('ema_fast', 3, 15),
-            'ema_slow': trial.suggest_int('ema_slow', 15, 60),
-            'momentum_period': trial.suggest_int('momentum_period', 3, 15),
-            'momentum_threshold': trial.suggest_float('momentum_threshold', 0.05, 0.3),
-            'ema_diff_threshold': trial.suggest_float('ema_diff_threshold', 0.01, 0.15),
-            'vol_min': trial.suggest_float('vol_min', 0.0, 0.05),
-            'max_hold': trial.suggest_int('max_hold', 8, 25),
+            'rsi_period': 2,  # Fixed - RSI(2) works best
+            'rsi_entry': trial.suggest_int('rsi_entry', 10, 35),
+            'rsi_exit': trial.suggest_int('rsi_exit', 65, 90),
+            'ker_period': trial.suggest_int('ker_period', 8, 15),
+            'ker_max': trial.suggest_float('ker_max', 0.2, 0.5),
+            'vol_min': trial.suggest_float('vol_min', 0.0, 0.1),
+            'max_hold': trial.suggest_int('max_hold', 6, 20),
+            'position_size': trial.suggest_float('position_size', 0.85, 0.95),
             'vol_period': 14,
             'allowed_hours': [9, 10, 11, 12, 13, 14],
         }
         
-        # Ensure fast < slow
-        if params['ema_fast'] >= params['ema_slow']:
+        # Ensure entry < exit
+        if params['rsi_entry'] >= params['rsi_exit']:
             return float('-inf')
         
         try:
-            trades_df = generate_nifty_trend_signals(data, params)
+            trades_df = generate_nifty_mean_reversion_signals(data, params)
             
             # Must have >= 120 trades
             if len(trades_df) < 120:
@@ -70,14 +70,13 @@ def optimize_nifty_optuna(n_trials: int = 200):
             
             # Calculate Sharpe
             trades_df['return_pct'] = trades_df['pnl'] / 100000 * 100
-            total_return = trades_df['pnl'].sum() / 100000 * 100
             
             if trades_df['return_pct'].std() == 0:
                 return float('-inf')
             
             sharpe = trades_df['return_pct'].mean() / trades_df['return_pct'].std()
             
-            # DIRECTLY optimize Sharpe (no multi-objective complexity)
+            # Directly optimize Sharpe
             return sharpe
             
         except Exception:
@@ -88,7 +87,7 @@ def optimize_nifty_optuna(n_trials: int = 200):
     study = optuna.create_study(
         direction='maximize',
         sampler=sampler,
-        study_name='nifty50_sharpe_max'
+        study_name='nifty50_mean_reversion'
     )
     
     # Run optimization
@@ -103,11 +102,12 @@ def optimize_nifty_optuna(n_trials: int = 200):
     best_sharpe = study.best_value
     
     # Add fixed params
+    best_params['rsi_period'] = 2
     best_params['vol_period'] = 14
     best_params['allowed_hours'] = [9, 10, 11, 12, 13, 14]
     
     # Re-run with best params for full metrics
-    trades_df = generate_nifty_trend_signals(data, best_params)
+    trades_df = generate_nifty_mean_reversion_signals(data, best_params)
     total_return = trades_df['pnl'].sum() / 100000 * 100
     win_rate = (trades_df['pnl'] > 0).sum() / len(trades_df) * 100
     
@@ -122,16 +122,16 @@ def optimize_nifty_optuna(n_trials: int = 200):
     for k, v in best_params.items():
         print(f"  {k}: {v}")
     
-    # Compare with current best
+    # Compare with current
     print(f"\n{'='*70}")
     print("COMPARISON")
     print(f"{'='*70}")
-    print(f"Current NIFTY Sharpe: -0.020")
-    print(f"Optuna NIFTY Sharpe:  {best_sharpe:.4f}")
-    if best_sharpe > -0.020:
-        print(f"✅ IMPROVEMENT: +{best_sharpe - (-0.020):.4f}")
+    print(f"Current NIFTY (Trend): -0.020 Sharpe")
+    print(f"New NIFTY (Mean Rev):  {best_sharpe:.4f} Sharpe")
+    if best_sharpe > 0:
+        print(f"✅ SUCCESS: Positive Sharpe achieved!")
     else:
-        print(f"⚠️ No improvement")
+        print(f"⚠️ Still negative, but may be improvement")
     
     # Save
     result = {
@@ -145,10 +145,10 @@ def optimize_nifty_optuna(n_trials: int = 200):
     }
     
     Path('optimization_results').mkdir(exist_ok=True)
-    with open('optimization_results/nifty_optuna_best.json', 'w') as f:
+    with open('optimization_results/nifty_mean_reversion_best.json', 'w') as f:
         json.dump(result, f, indent=2, cls=NpEncoder)
     
-    print(f"\n✅ Saved to optimization_results/nifty_optuna_best.json")
+    print(f"\n✅ Saved to optimization_results/nifty_mean_reversion_best.json")
     
     return result
 
@@ -159,4 +159,4 @@ if __name__ == '__main__':
     parser.add_argument('--trials', type=int, default=300)
     args = parser.parse_args()
     
-    optimize_nifty_optuna(n_trials=args.trials)
+    optimize_nifty_mean_reversion(n_trials=args.trials)

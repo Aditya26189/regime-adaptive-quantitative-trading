@@ -97,17 +97,15 @@ def generate_nifty_trend_signals(data: pd.DataFrame, params: Dict) -> pd.DataFra
         
         # ENTRY LOGIC
         if position is None:
-            # Check all entry conditions
+            # Check entry conditions (SIMPLIFIED - less restrictive)
             is_uptrend = current['ema_diff'] > ema_diff_threshold
             has_momentum = current['momentum'] > momentum_threshold
-            has_volatility = current['volatility'] > vol_min
             is_allowed_time = current['hour'] in allowed_hours
             
-            # Additional filter: Momentum and trend must align
-            momentum_aligned = (current['momentum'] > 0) and (current['ema_diff'] > 0)
+            # Basic alignment: both trend and momentum should be positive
+            both_positive = (current['momentum'] > 0) and (current['ema_diff'] > 0)
             
-            if (is_uptrend and has_momentum and has_volatility and 
-                is_allowed_time and momentum_aligned):
+            if (is_uptrend and has_momentum and is_allowed_time and both_positive):
                 
                 # Calculate quantity
                 entry_price = current['close']
@@ -129,19 +127,21 @@ def generate_nifty_trend_signals(data: pd.DataFrame, params: Dict) -> pd.DataFra
             bars_held = i - position['entry_idx']
             current_price = current['close']
             
-            # Exit conditions
+            # Exit conditions (IMPROVED - removed early exit filter)
             trend_reversed = current['ema_diff'] < 0  # Fast EMA below slow
-            momentum_failed = current['momentum'] < 0  # Momentum turned negative
+            momentum_failed = current['momentum'] < -0.2  # Momentum strongly negative
             max_hold_reached = bars_held >= max_hold
             
-            # Trailing stop: Exit if we're losing the trend
-            ema_weakening = current['ema_diff'] < position['entry_ema_diff'] * 0.3
+            # Profit target and stop loss
+            pnl_pct = (current_price - position['entry_price']) / position['entry_price'] * 100
+            profit_target = pnl_pct > 2.0  # Take profit at +2%
+            stop_loss = pnl_pct < -1.5  # Stop loss at -1.5%
             
             # End of day
             is_eod = (current['hour'] >= 15 and current['minute'] >= 15)
             
             should_exit = (trend_reversed or momentum_failed or max_hold_reached or 
-                          ema_weakening or is_eod)
+                          profit_target or stop_loss or is_eod)
             
             if should_exit:
                 # Calculate P&L
@@ -160,7 +160,8 @@ def generate_nifty_trend_signals(data: pd.DataFrame, params: Dict) -> pd.DataFra
                     'exit_reason': ('trend_reversed' if trend_reversed else
                                    'momentum_failed' if momentum_failed else
                                    'max_hold' if max_hold_reached else
-                                   'ema_weakening' if ema_weakening else 'eod'),
+                                   'profit_target' if profit_target else
+                                   'stop_loss' if stop_loss else 'eod'),
                 })
                 
                 capital += net_pnl

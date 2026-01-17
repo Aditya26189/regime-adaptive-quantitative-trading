@@ -1,0 +1,26 @@
+{
+  "params": {
+    "ema_fast": 10,
+    "ema_slow": 18,
+    "momentum_period": 9,
+    "momentum_threshold": 0.2,
+    "ema_diff_threshold": 0.046748841356464566,
+    "vol_min": 0.03152844103413788,
+    "max_hold": 5,
+    "vol_period": 14,
+    "allowed_hours": [
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "adx_period": 14,
+    "adx_entry": 35,
+    "adx_exit": 20
+  },
+  "sharpe": 0.0735056944502217,
+  "trades": 57,
+  "return": 1.5869499999999643
+}
