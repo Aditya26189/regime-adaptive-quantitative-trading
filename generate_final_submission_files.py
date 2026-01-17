@@ -14,6 +14,7 @@ from src.strategies.hybrid_adaptive_v2 import HybridAdaptiveStrategyV2
 from src.strategies.hybrid_adaptive import HybridAdaptiveStrategy
 from src.strategies.ensemble_wrapper import EnsembleStrategy
 from src.strategies.nifty_trend_ladder import NIFTYTrendLadderStrategy
+from src.strategies.regime_switching_strategy import RegimeSwitchingStrategy
 
 ROLL_NUMBER = '23ME3EP03'
 
@@ -31,8 +32,11 @@ SYMBOLS = {
     'VBL': {
         'file': 'data/raw/NSE_VBL_EQ_1hour.csv',
         'code': 'NSE:VBL-EQ',
-        'strategy': 'ensemble',
-        'params': baseline['VBL']['params']
+        'strategy': 'regime_switching',
+        'params': {
+            'rsi_period': 2,
+            'allowed_hours': [10, 11, 12, 13, 14, 15]
+        }
     },
     'RELIANCE': {
         'file': 'data/raw/NSE_RELIANCE_EQ_1hour.csv',
@@ -75,7 +79,11 @@ for symbol, config in SYMBOLS.items():
     df = df.sort_values('datetime').reset_index(drop=True)
     
     # Get params and run strategy
-    if config['strategy'] == 'ensemble':
+    if config['strategy'] == 'regime_switching':
+        strategy = RegimeSwitchingStrategy(config['params'])
+        trades, metrics = strategy.backtest(df)
+
+    elif config['strategy'] == 'ensemble':
         params = {k: v for k, v in config['params'].items() if k != '_strategy'}
         strategy = EnsembleStrategy(params, n_variants=5, min_agreement=3)
         trades, metrics = strategy.backtest(df)
