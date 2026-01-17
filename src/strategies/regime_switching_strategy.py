@@ -163,7 +163,7 @@ class RegimeSwitchingStrategy:
             if not in_position:
                 if df['signal_long'].iloc[i]:
                     position_fraction = df['position_size_regime'].iloc[i]
-                    entry_qty = int((capital - fee_per_order) * position_fraction / current_close)
+                    entry_qty = int((initial_capital - fee_per_order) * position_fraction / current_close)
                     
                     if entry_qty > 0:
                         entry_price = current_close

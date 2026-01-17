@@ -96,7 +96,7 @@ class NIFTYTrendLadderStrategy:
             if not in_position:
                 if df['signal_long'].iloc[i]:
                     # Enter position
-                    entry_qty = int((capital - fee_per_order) * 0.95 / current_close)
+                    entry_qty = int((initial_capital - fee_per_order) * 0.95 / current_close)
                     
                     if entry_qty > 0:
                         entry_price = current_close
