@@ -3,9 +3,9 @@
 ## Quant Games 2026 - Trading Strategy Submission
 
 **Team:** 23ME3EP03  
-**Final Sharpe Ratio:** 1.263  
-**Final Return:** +7.15%  
-**Submission File:** `23ME3EP03_winning_submission_20260117_061429.csv`
+**Final Sharpe Ratio:** 1.267  
+**Final Return:** +7.38%  
+**Submission File:** `23ME3EP03_final_optuna_submission_20260117_065520.csv`
 
 ---
 
@@ -37,7 +37,7 @@ Phase 1: Random Search (500 samples)      → Sharpe 0.93
 Phase 2: Sharpe-Focused Optimization      → Sharpe 1.01
 Phase 3: VBL Ensemble                     → Sharpe 1.08
 Phase 4: NIFTY Trend Strategy             → Sharpe 1.26
-Phase 5: Ultra Fine-Tuning                → Sharpe 1.263
+Phase 5: Optuna Bayesian Optimization     → Sharpe 1.267
 ```
 
 ---
@@ -46,12 +46,12 @@ Phase 5: Ultra Fine-Tuning                → Sharpe 1.263
 
 | Symbol | Strategy | Sharpe | Return | Trades |
 |--------|----------|--------|--------|--------|
-| NIFTY50 | Trend Following | -0.02 | -0.94% | 125 |
-| VBL | Ensemble (5 variants) | 1.57 | +12.00% | 127 |
-| RELIANCE | Deep Optimized | 1.64 | +7.12% | 121 |
-| SUNPHARMA | Mean Reversion | 1.84 | +7.53% | 144 |
-| YESBANK | Hybrid | 1.28 | +10.02% | 122 |
-| **PORTFOLIO** | **Mixed** | **1.263** | **+7.15%** | **639** |
+| NIFTY50 | Trend Following (Optuna) | +0.006 | +0.23% | 132 |
+| VBL | Ensemble (5 variants) | 1.574 | +12.00% | 127 |
+| RELIANCE | Deep Optimized | 1.644 | +7.12% | 121 |
+| SUNPHARMA | Mean Reversion | 1.840 | +7.53% | 144 |
+| YESBANK | Hybrid | 1.278 | +10.02% | 122 |
+| **PORTFOLIO** | **Mixed** | **1.267** | **+7.38%** | **646** |
 
 ---
 
@@ -95,7 +95,7 @@ Result: Found RELIANCE peak (1.64 Sharpe)
 
 ## 📁 Deliverables
 
-1. **Submission CSV:** `output/23ME3EP03_winning_submission_20260117_061429.csv`
+1. **Submission CSV:** `output/23ME3EP03_final_optuna_submission_20260117_065520.csv`
 2. **Strategy Code:** `src/strategies/` directory
 3. **Optimizers:** `src/optimizers/` directory
 4. **Documentation:** `docs/` directory

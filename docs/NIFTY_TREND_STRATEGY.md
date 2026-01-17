@@ -81,6 +81,6 @@ calculate_sharpe_ratio(trades_df: pd.DataFrame) -> float
 | Approach | Sharpe | Return | Win Rate |
 |----------|--------|--------|----------|
 | Mean Reversion | -1.14 | -2.84% | ~45% |
-| **Trend Following** | **-0.020** | **-0.94%** | 38% |
+| **Trend Following (Optuna)** | **+0.006** | **+0.23%** | 42% |
 
 The trend approach sacrifices win rate for better risk-adjusted returns by avoiding false signals.
