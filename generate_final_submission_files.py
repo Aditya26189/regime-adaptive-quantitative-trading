@@ -13,7 +13,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from src.strategies.hybrid_adaptive_v2 import HybridAdaptiveStrategyV2
 from src.strategies.hybrid_adaptive import HybridAdaptiveStrategy
 from src.strategies.ensemble_wrapper import EnsembleStrategy
-from src.strategies.nifty_trend_strategy import generate_nifty_trend_signals
+from src.strategies.nifty_trend_ladder import NIFTYTrendLadderStrategy
 
 ROLL_NUMBER = '23ME3EP03'
 
@@ -55,8 +55,12 @@ SYMBOLS = {
     'NIFTY50': {
         'file': 'data/raw/NSE_NIFTY50_INDEX_1hour.csv',
         'code': 'NSE:NIFTY50-INDEX',
-        'strategy': 'trend',
-        'params': nifty_data['params']
+        'strategy': 'nifty_trend_ladder',
+        'params': {
+            'ema_fast': 8, 'ema_slow': 21, 'momentum_threshold': 0.002,
+            'vol_min_pct': 0.003, 'max_hold_bars': 6, 'stop_loss_pct': 2.0,
+            'allowed_hours': [10, 11, 12, 13, 14, 15]
+        }
     }
 }
 
@@ -94,10 +98,9 @@ for symbol, config in SYMBOLS.items():
         strategy = HybridAdaptiveStrategy(params)
         trades, metrics = strategy.backtest(df)
         
-    elif config['strategy'] == 'trend':
-        df_trades = generate_nifty_trend_signals(df, config['params'])
-        trades = df_trades.to_dict('records')
-        metrics = {'total_trades': len(trades), 'sharpe_ratio': 0.006}
+    elif config['strategy'] == 'nifty_trend_ladder':
+        strategy = NIFTYTrendLadderStrategy(config['params'])
+        trades, metrics = strategy.backtest_with_ladder_exits(df)
     
     # Store results
     trade_count = metrics.get('total_trades', len(trades))
@@ -108,7 +111,7 @@ for symbol, config in SYMBOLS.items():
     
     # Format trades
     for t in trades:
-        if config['strategy'] == 'trend':
+        if config['strategy'] == 'nifty_trend_ladder':
             entry = t['entry_price']
             exit_raw = t['exit_price']
         else:

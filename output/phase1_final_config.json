@@ -1,0 +1,37 @@
+{
+  "portfolio_sharpe": 0.5760549817609923,
+  "baseline_sharpe": 1.4862,
+  "improvement": -0.9101450182390076,
+  "symbol_configs": {
+    "NIFTY50": {
+      "sharpe": 1.653485506011211,
+      "trades": 128,
+      "technique": "Trend+Ladder",
+      "improvement": 1.647485506011211
+    },
+    "RELIANCE": {
+      "sharpe": -1.1725849862327065,
+      "trades": 242,
+      "technique": "Vol-Adaptive RSI",
+      "improvement": -2.8555849862327065
+    },
+    "VBL": {
+      "sharpe": -0.8768402256485314,
+      "trades": 134,
+      "technique": "Profit Ladder",
+      "improvement": -2.4508402256485313
+    },
+    "YESBANK": {
+      "sharpe": 0.14421461467498822,
+      "trades": 174,
+      "technique": "Vol-Adaptive RSI",
+      "improvement": -0.8917853853250118
+    },
+    "SUNPHARMA": {
+      "sharpe": 3.132,
+      "trades": 134,
+      "technique": "Baseline (don't touch)",
+      "improvement": 0.0
+    }
+  }
+}
