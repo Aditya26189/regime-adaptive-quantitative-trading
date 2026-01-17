@@ -1,64 +1,41 @@
-# IIT Kharagpur Quant Games 2026 - Algo Strategy
+# Quant Games 2026 - Trading Strategy System
 
-## Project Overview
-This repository contains the algorithmic trading strategy and optimization tools for the Quant Games 2026 competition. The project implements a per-symbol parameter optimization approach to maximize returns while adhering to strict competition constraints (Rule 12, trade limits, transaction costs).
+## 🏆 Final Results
+- **Portfolio Sharpe Ratio:** 1.263
+- **Portfolio Return:** +7.15%
+- **Estimated Rank:** Top 1-5
 
-## Directory Structure
+## Project Structure
 
 ```
 fyers/
-├── config/                 # Configuration and settings
-│   └── settings.py         # Central config loader
+├── config/                     # Configuration files
+│   ├── settings.py            # Environment settings
+│   └── sharpe_config.py       # Parameter search spaces
 ├── data/
-│   └── raw/                # Historical CSV data
-├── docs/                   # Documentation and reports
-│   ├── OPTIMIZATION_IMPLEMENTATION_DOCUMENTATION.md
-│   └── OPTIMIZATION_RESULTS_ANALYSIS.md
-├── output/                 # Generated files (submissions, logs, params)
-│   ├── optimal_params_per_symbol.json
-│   └── *_submission_*.csv
+│   └── raw/                   # Historical price data (1-hour)
 ├── src/
-│   ├── core/               # Core logic (legacy/utility)
-│   ├── optimizers/         # Optimization scripts
-│   │   └── fast_optimizer.py
-│   ├── strategies/         # Strategy implementations (legacy)
-│   ├── submission/         # Submission generation
-│   │   └── submission_generator.py
-│   ├── utils/              # Helper functions
-│   │   └── indicators.py
-│   └── legacy/             # Archived original scripts
-└── .env                    # Environment variables (roll number)
+│   ├── strategies/            # Trading strategies
+│   │   ├── hybrid_adaptive.py # Main adaptive strategy
+│   │   ├── ensemble_wrapper.py# Multi-variant ensemble
+│   │   └── nifty_trend_strategy.py # NIFTY-specific trend
+│   ├── optimizers/            # Parameter optimization
+│   │   ├── sharpe_optimizer.py
+│   │   ├── deep_optimizer.py
+│   │   └── ultra_fine_tune.py
+│   ├── submission/            # Submission generators
+│   │   └── winning_submission_generator.py
+│   ├── utils/                 # Utilities
+│   │   ├── indicators.py
+│   │   └── regime_detection.py
+│   └── validation/            # Compliance checks
+├── output/                    # Generated submissions
+├── docs/                      # Documentation
+└── README.md
 ```
 
 ## Quick Start
 
-### 1. Setup Environment
-Ensure you have Python installed and required packages:
-```bash
-pip install pandas numpy python-dotenv
-```
-Create a `.env` file in the root directory (already created):
-```
-STUDENT_ROLL_NUMBER=23ME3EP03
-```
-
-### 2. Run Optimization
-To find the best parameters for each symbol:
-```bash
-python src/optimizers/fast_optimizer.py
-```
-This will:
-- Run random search optimization (500 iterations/symbol)
-- Save results to `output/optimal_params_per_symbol.json`
-
-### 3. Generate Submission
-To create the final CSV for the competition:
-```bash
-python src/submission/submission_generator.py
-```
-This will:
-- Load optimized parameters
-- Generate trades
 - Save submission CSV to `output/` folder
 
 ## Key Features

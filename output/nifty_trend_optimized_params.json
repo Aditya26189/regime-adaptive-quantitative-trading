@@ -1,11 +1,11 @@
 {
   "NIFTY50_TREND": {
-    "ema_fast": 3,
-    "ema_slow": 35,
-    "momentum_period": 10,
-    "momentum_threshold": 0.1,
-    "ema_diff_threshold": 0.1,
-    "vol_min": 0.01,
+    "ema_fast": 4,
+    "ema_slow": 30,
+    "momentum_period": 9,
+    "momentum_threshold": 0.08080476760470082,
+    "ema_diff_threshold": 0.14753601243485104,
+    "vol_min": 0.0026596439919251477,
     "allowed_hours": [
       9,
       10,
@@ -14,13 +14,13 @@
       13,
       14
     ],
-    "max_hold": 8,
+    "max_hold": 5,
     "vol_period": 14
   },
   "metrics": {
-    "return": -1.935250000000058,
-    "sharpe": -0.0470329616741512,
-    "trades": 126,
+    "return": -0.940650000000056,
+    "sharpe": -0.020286984383125393,
+    "trades": 125,
     "win_rate": 38.095238095238095
   },
   "timestamp": "2026-01-17T06:00:24.354485"

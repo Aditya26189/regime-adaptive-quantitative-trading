@@ -7,16 +7,16 @@
 
 ---
 
-## 🚀 Performance Matrix
+## 🚀 Performance Matrix (After Fine-Tuning)
 
 | Symbol | Strategy | Old Sharpe | New Sharpe | Impact |
 |--------|----------|------------|------------|--------|
-| **NIFTY50** | **Trend Following** | -1.14 | **-0.047** | **+1.09** 🚀 |
+| **NIFTY50** | **Trend Following** | -1.14 | **-0.020** | **+1.12** 🚀 |
 | **VBL** | Ensemble MeanRev | 1.16 | **1.574** | +0.41 |
 | **RELIANCE** | Hybrid Adaptive | 1.51 | **1.644** | +0.13 |
 | **SUNPHARM** | Mean Reversion | 1.84 | 1.840 | - |
 | **YESBANK** | Hybrid | 1.28 | 1.278 | - |
-| **PORTFOLIO** | **Mixed** | **1.01** | **1.258** | **+0.25** |
+| **PORTFOLIO** | **Mixed** | **1.01** | **1.263** | **+0.25** |
 
 ---
 
