@@ -1,0 +1,78 @@
+{
+  "NIFTY50": {
+    "params": {
+      "strategy_type": "HYBRID",
+      "ker_period": 10,
+      "ker_threshold_meanrev": 0.2,
+      "ker_threshold_trend": 0.3,
+      "rsi_period": 2,
+      "rsi_entry_range": 35,
+      "rsi_exit_range": 67,
+      "vol_min_pct": 0.006,
+      "ema_fast": 5,
+      "ema_slow": 18,
+      "trend_pulse_mult": 0.5,
+      "allowed_hours": [
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "max_hold_bars": 8
+    },
+    "metrics": {
+      "total_trades": 122,
+      "meanrev_trades": 56,
+      "trend_trades": 66,
+      "capped_trades": 0,
+      "total_return_pct": -3.7512500000000726,
+      "sharpe_ratio": -1.5245359902396847,
+      "max_drawdown_pct": -6.144014494477809,
+      "win_rate": 45.90163934426229,
+      "profit_factor": 0.7676683533484843,
+      "final_capital": 96248.74999999993,
+      "avg_trade_pnl": -30.747950819672578,
+      "max_return": 1.6964518069462224,
+      "min_return": -1.085959413309362
+    },
+    "score": -1.5245359902396847
+  },
+  "RELIANCE": {
+    "params": {
+      "strategy_type": "HYBRID",
+      "ker_period": 10,
+      "ker_threshold_meanrev": 0.28,
+      "ker_threshold_trend": 0.5,
+      "rsi_period": 3,
+      "rsi_entry_range": 29,
+      "rsi_exit_range": 90,
+      "vol_min_pct": 0.004,
+      "ema_fast": 5,
+      "ema_slow": 21,
+      "allowed_hours": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "max_hold_bars": 6
+    },
+    "metrics": {
+      "total_trades": 121,
+      "meanrev_trades": 76,
+      "trend_trades": 45,
+      "capped_trades": 0,
+      "total_return_pct": 7.122700000000099,
+      "sharpe_ratio": 1.6438294370204256,
+      "max_drawdown_pct": -5.3191432204452385,
+      "win_rate": 55.371900826446286,
+      "profit_factor": 1.2940518358887967,
+      "final_capital": 107122.7000000001,
+      "avg_trade_pnl": 58.8652892561983,
+      "max_return": 1.8580797040524555,
+      "min_return": -1.4073433446025703
+    },
+    "score": 1.6438294370204256
+  }
+}
