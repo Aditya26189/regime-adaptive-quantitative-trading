@@ -1,0 +1,86 @@
+{
+  "pairs_VBL": {
+    "sharpe": -999.0,
+    "params": {
+      "beta_window": 60,
+      "entry_z": -2.461587760651788,
+      "exit_z": 0.15498865401897688
+    }
+  },
+  "pairs_RELIANCE": {
+    "sharpe": -999.0,
+    "params": {
+      "beta_window": 36,
+      "entry_z": -1.6798656659895326,
+      "exit_z": 0.18727900208055626
+    }
+  },
+  "pairs_YESBANK": {
+    "sharpe": -999.0,
+    "params": {
+      "beta_window": 71,
+      "entry_z": -1.9144648524874264,
+      "exit_z": -0.12166186517515942
+    }
+  },
+  "pairs_SUNPHARMA": {
+    "sharpe": -999.0,
+    "params": {
+      "beta_window": 42,
+      "entry_z": -1.8323375981002228,
+      "exit_z": 0.03653183006278504
+    }
+  },
+  "volume_VBL": {
+    "sharpe": -999.0,
+    "params": {
+      "vwma_period": 32,
+      "mfi_period": 13,
+      "mfi_entry": 32,
+      "mfi_exit": 73
+    }
+  },
+  "volume_RELIANCE": {
+    "sharpe": -999.0,
+    "params": {
+      "vwma_period": 37,
+      "mfi_period": 30,
+      "mfi_entry": 33,
+      "mfi_exit": 69
+    }
+  },
+  "volume_YESBANK": {
+    "sharpe": -999.0,
+    "params": {
+      "vwma_period": 25,
+      "mfi_period": 14,
+      "mfi_entry": 36,
+      "mfi_exit": 68
+    }
+  },
+  "volume_SUNPHARMA": {
+    "sharpe": -999.0,
+    "params": {
+      "vwma_period": 12,
+      "mfi_period": 13,
+      "mfi_entry": 21,
+      "mfi_exit": 62
+    }
+  },
+  "sunpharma_boost": {
+    "sharpe": -0.012231051500746755,
+    "params": {
+      "rsi_period": 2,
+      "rsi_entry": 25,
+      "rsi_exit": 80
+    }
+  },
+  "ensemble": {
+    "sharpe": 0.06502091272497013,
+    "params": {
+      "rsi_period": 2,
+      "rsi_entry": 12,
+      "rsi_exit": 67
+    }
+  }
+}

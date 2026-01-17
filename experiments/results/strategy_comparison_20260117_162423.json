@@ -1,0 +1,156 @@
+{
+  "timestamp": "20260117_162423",
+  "baseline_avg_sharpe": 1.4862,
+  "baseline_per_symbol": {
+    "VBL": 1.574,
+    "RELIANCE": 1.683,
+    "SUNPHARMA": 3.132,
+    "YESBANK": 1.036,
+    "NIFTY50": 0.006
+  },
+  "stat_arb_results": [],
+  "strategy_results": {
+    "VolBreakout": {
+      "avg_sharpe": -999,
+      "symbols": {
+        "VBL": {
+          "sharpe": -999,
+          "trades": 0
+        },
+        "RELIANCE": {
+          "sharpe": -999,
+          "trades": 0
+        },
+        "SUNPHARMA": {
+          "sharpe": -999,
+          "trades": 0
+        },
+        "YESBANK": {
+          "sharpe": -999,
+          "trades": 0
+        },
+        "NIFTY50": {
+          "sharpe": -999,
+          "trades": 0
+        }
+      }
+    },
+    "Momentum": {
+      "avg_sharpe": -999,
+      "symbols": {
+        "VBL": {
+          "sharpe": -999,
+          "trades": 0
+        },
+        "RELIANCE": {
+          "sharpe": -999,
+          "trades": 0
+        },
+        "SUNPHARMA": {
+          "sharpe": -999,
+          "trades": 0
+        },
+        "YESBANK": {
+          "sharpe": -999,
+          "trades": 0
+        },
+        "NIFTY50": {
+          "sharpe": -999,
+          "trades": 0
+        }
+      }
+    },
+    "EnhancedRegime": {
+      "avg_sharpe": 0.0729853272179822,
+      "symbols": {
+        "VBL": {
+          "sharpe": -0.01779195155891151,
+          "trades": 130
+        },
+        "RELIANCE": {
+          "sharpe": 0.269596262638771,
+          "trades": 131
+        },
+        "SUNPHARMA": {
+          "sharpe": 0.045698536267915923,
+          "trades": 129
+        },
+        "YESBANK": {
+          "sharpe": -0.005561538475846593,
+          "trades": 123
+        },
+        "NIFTY50": {
+          "sharpe": -999,
+          "trades": 0
+        }
+      }
+    },
+    "AdaptiveBB": {
+      "avg_sharpe": -999,
+      "symbols": {
+        "VBL": {
+          "sharpe": -999,
+          "trades": 0
+        },
+        "RELIANCE": {
+          "sharpe": -999,
+          "trades": 0
+        },
+        "SUNPHARMA": {
+          "sharpe": -999,
+          "trades": 0
+        },
+        "YESBANK": {
+          "sharpe": -999,
+          "trades": 0
+        },
+        "NIFTY50": {
+          "sharpe": -999,
+          "trades": 0
+        }
+      }
+    },
+    "Seasonality": {
+      "avg_sharpe": 0.062283060514320476,
+      "symbols": {
+        "VBL": {
+          "sharpe": 0.029739800862331446,
+          "trades": 198
+        },
+        "RELIANCE": {
+          "sharpe": 0.04130514172010056,
+          "trades": 170
+        },
+        "SUNPHARMA": {
+          "sharpe": 0.20422978378709386,
+          "trades": 126
+        },
+        "YESBANK": {
+          "sharpe": 0.128235723320873,
+          "trades": 125
+        },
+        "NIFTY50": {
+          "sharpe": -0.09209514711879647,
+          "trades": 197
+        }
+      }
+    }
+  },
+  "ranking": [
+    {
+      "strategy": "BASELINE",
+      "avg_sharpe": 1.4862,
+      "min_trades": 120
+    },
+    {
+      "strategy": "EnhancedRegime",
+      "avg_sharpe": 0.0729853272179822,
+      "min_trades": 0
+    },
+    {
+      "strategy": "Seasonality",
+      "avg_sharpe": 0.062283060514320476,
+      "min_trades": 125
+    }
+  ]
+}

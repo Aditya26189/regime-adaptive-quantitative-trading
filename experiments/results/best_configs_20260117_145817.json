@@ -1,0 +1,106 @@
+{
+  "VBL": {
+    "method": "DeepOptuna",
+    "sharpe": 1.8814998948802857,
+    "trades": "129",
+    "params": {
+      "ker_period": 9,
+      "rsi_period": 3,
+      "vol_lookback": 20,
+      "max_return_cap": 5.0,
+      "ker_threshold_meanrev": 0.3688121069146094,
+      "ker_threshold_trend": 0.5927971951447675,
+      "rsi_entry": 42,
+      "rsi_exit": 73,
+      "vol_min_pct": 0.01351499684097407,
+      "ema_fast": 8,
+      "ema_slow": 21,
+      "trend_pulse_mult": 0.4386684279733015,
+      "allowed_hours": [
+        9,
+        10,
+        11
+      ],
+      "max_hold_bars": 10,
+      "_strategy": "ENSEMBLE",
+      "max_hold": 10,
+      "vol_min": 0.013469613929444775,
+      "position_size": 0.8650967129375895,
+      "adaptive_hold": true
+    }
+  },
+  "RELIANCE": {
+    "method": "DeepOptuna",
+    "sharpe": 2.069881163647034,
+    "trades": "110",
+    "params": {
+      "strategy_type": "HYBRID",
+      "ker_period": 9,
+      "ker_threshold_meanrev": 0.28,
+      "ker_threshold_trend": 0.5,
+      "rsi_period": 4,
+      "rsi_entry_range": 29,
+      "rsi_exit_range": 90,
+      "vol_min_pct": 0.004,
+      "ema_fast": 5,
+      "ema_slow": 21,
+      "allowed_hours": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "max_hold_bars": 6,
+      "_strategy": "SINGLE",
+      "rsi_entry": 34,
+      "rsi_exit": 63,
+      "max_hold": 6,
+      "vol_min": 0.0043026518995369165,
+      "position_size": 0.9179542153278303,
+      "adaptive_hold": true
+    }
+  },
+  "SUNPHARMA": {
+    "method": "Genetic",
+    "sharpe": 2.6688257526985435,
+    "trades": "130",
+    "params": {
+      "rsi_period": 3,
+      "rsi_entry": 33,
+      "rsi_exit": 63,
+      "max_hold_bars": 8,
+      "vol_min_pct": 0.0046,
+      "ker_period": 15,
+      "position_size_pct": 0.95
+    }
+  },
+  "YESBANK": {
+    "method": "KERRegime",
+    "sharpe": 1.2782824594453832,
+    "trades": "122",
+    "params": {
+      "ker_period": 10,
+      "rsi_period": 2,
+      "vol_lookback": 20,
+      "max_return_cap": 5.0,
+      "ker_threshold_meanrev": 0.26980488595343255,
+      "ker_threshold_trend": 0.47911308589265544,
+      "rsi_entry": 23,
+      "rsi_exit": 88,
+      "vol_min_pct": 0.0054985912613041196,
+      "ema_fast": 5,
+      "ema_slow": 21,
+      "trend_pulse_mult": 0.4097573487563908,
+      "allowed_hours": [
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "max_hold_bars": 2,
+      "_strategy": "SINGLE",
+      "ker_threshold": 0.2
+    }
+  }
+}

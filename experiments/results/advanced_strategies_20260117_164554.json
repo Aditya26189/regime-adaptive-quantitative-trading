@@ -1,0 +1,132 @@
+{
+  "timestamp": "20260117_164554",
+  "baseline_sharpe": 1.486,
+  "results": [
+    {
+      "strategy": "PairsTrading",
+      "symbol": "RELIANCE",
+      "sharpe": -999,
+      "trades": 0
+    },
+    {
+      "strategy": "PairsTrading",
+      "symbol": "VBL",
+      "sharpe": -999,
+      "trades": 0
+    },
+    {
+      "strategy": "PairsTrading",
+      "symbol": "SUNPHARMA",
+      "sharpe": -999,
+      "trades": 0
+    },
+    {
+      "strategy": "PairsTrading",
+      "symbol": "YESBANK",
+      "sharpe": -999,
+      "trades": 0
+    },
+    {
+      "strategy": "VolumeMomentum",
+      "symbol": "RELIANCE",
+      "sharpe": -999,
+      "trades": 0
+    },
+    {
+      "strategy": "VolumeMomentum",
+      "symbol": "VBL",
+      "sharpe": -999,
+      "trades": 0
+    },
+    {
+      "strategy": "VolumeMomentum",
+      "symbol": "SUNPHARMA",
+      "sharpe": -999,
+      "trades": 0
+    },
+    {
+      "strategy": "VolumeMomentum",
+      "symbol": "YESBANK",
+      "sharpe": -999,
+      "trades": 0
+    },
+    {
+      "strategy": "VolRegime",
+      "symbol": "RELIANCE",
+      "sharpe": -0.004856047801125366,
+      "trades": 124,
+      "params": {
+        "vol_window": 14,
+        "percentile_lookback": 120,
+        "high_vol_strategy": "CONTRARIAN",
+        "rsi_period": 2,
+        "max_hold": 10
+      },
+      "improvement": -1.6878560478011255
+    },
+    {
+      "strategy": "VolRegime",
+      "symbol": "VBL",
+      "sharpe": -0.03084482913510181,
+      "trades": 165,
+      "params": {
+        "vol_window": 30,
+        "percentile_lookback": 120,
+        "high_vol_strategy": "AVOID",
+        "rsi_period": 2,
+        "max_hold": 8
+      },
+      "improvement": -1.6048448291351018
+    },
+    {
+      "strategy": "VolRegime",
+      "symbol": "SUNPHARMA",
+      "sharpe": 0.07530392629436858,
+      "trades": 121,
+      "params": {
+        "vol_window": 30,
+        "percentile_lookback": 200,
+        "high_vol_strategy": "AVOID",
+        "rsi_period": 2,
+        "max_hold": 12
+      },
+      "improvement": -3.0566960737056315
+    },
+    {
+      "strategy": "VolRegime",
+      "symbol": "YESBANK",
+      "sharpe": -0.07138192779220523,
+      "trades": 134,
+      "params": {
+        "vol_window": 20,
+        "percentile_lookback": 180,
+        "high_vol_strategy": "CONTRARIAN",
+        "rsi_period": 3,
+        "max_hold": 6
+      },
+      "improvement": -1.1073819277922052
+    }
+  ],
+  "best_per_symbol": {
+    "RELIANCE": {
+      "strategy": "VolRegime",
+      "sharpe": -0.004856047801125366,
+      "trades": "124"
+    },
+    "VBL": {
+      "strategy": "VolRegime",
+      "sharpe": -0.03084482913510181,
+      "trades": "165"
+    },
+    "SUNPHARMA": {
+      "strategy": "VolRegime",
+      "sharpe": 0.07530392629436858,
+      "trades": "121"
+    },
+    "YESBANK": {
+      "strategy": "VolRegime",
+      "sharpe": -0.07138192779220523,
+      "trades": "134"
+    }
+  }
+}
