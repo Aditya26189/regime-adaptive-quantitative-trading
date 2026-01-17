@@ -8,7 +8,7 @@ import os
 import sys
 
 def validate_pnl_accounting():
-    submission_dir = 'submission_5'
+    submission_dir = 'submission_new'
     print(f"Checking {submission_dir} for PnL consistency...")
     
     files = [f for f in os.listdir(submission_dir) if f.startswith('STRATEGY5') and f.endswith('.csv')]

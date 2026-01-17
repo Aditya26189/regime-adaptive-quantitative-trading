@@ -8,7 +8,7 @@ import os
 import sys
 
 def check_data_leakage():
-    submission_dir = 'submission_5'
+    submission_dir = 'submission_new'
     print(f"Checking {submission_dir} for Data Leakage...")
     
     files = [f for f in os.listdir(submission_dir) if f.startswith('STRATEGY5') and f.endswith('.csv')]
