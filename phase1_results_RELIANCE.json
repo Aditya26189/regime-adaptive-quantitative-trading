@@ -1,0 +1,29 @@
+{
+  "symbol": "RELIANCE",
+  "accept": false,
+  "params": {
+    "strategy_type": "HYBRID",
+    "ker_period": 10,
+    "ker_threshold_meanrev": 0.28,
+    "ker_threshold_trend": 0.5,
+    "rsi_period": 3,
+    "rsi_entry_range": 29,
+    "rsi_exit_range": 90,
+    "vol_min_pct": 0.004,
+    "ema_fast": 5,
+    "ema_slow": 21,
+    "allowed_hours": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "max_hold_bars": 6
+  },
+  "metrics": {
+    "sharpe": 1.6438294370204256,
+    "trades": 121,
+    "return": 0.0,
+    "maxdd": 0.0
+  }
+}

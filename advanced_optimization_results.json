@@ -1,0 +1,131 @@
+{
+  "results": {
+    "RELIANCE": {
+      "symbol": "RELIANCE",
+      "accept": true,
+      "params": {
+        "strategy_type": "HYBRID",
+        "ker_period": 10,
+        "ker_threshold_meanrev": 0.28,
+        "ker_threshold_trend": 0.5,
+        "rsi_period": 2,
+        "rsi_entry_range": 29,
+        "rsi_exit_range": 90,
+        "vol_min_pct": 0.008,
+        "ema_fast": 5,
+        "ema_slow": 21,
+        "allowed_hours": [
+          9,
+          10,
+          11,
+          12
+        ],
+        "max_hold_bars": 8,
+        "use_dynamic_sizing": false,
+        "use_multi_timeframe": true,
+        "daily_ema_period": 50,
+        "require_daily_bias": false,
+        "use_profit_ladder": false,
+        "use_adaptive_hold": true,
+        "use_dynamic_rsi": false
+      },
+      "metrics": {
+        "sharpe": 1.6826280928304238,
+        "trades": 128,
+        "return": 7.572150000000096,
+        "win_rate": 57.8125,
+        "max_dd": -4.262063358491094
+      },
+      "improvement": 0.038798655809998195
+    },
+    "SUNPHARMA": {
+      "symbol": "SUNPHARMA",
+      "accept": true,
+      "params": {
+        "ker_period": 15,
+        "rsi_period": 4,
+        "vol_lookback": 14,
+        "max_return_cap": 5.0,
+        "ker_threshold_meanrev": 0.38224215306531234,
+        "ker_threshold_trend": 0.6094140658792518,
+        "rsi_entry": 38,
+        "rsi_exit": 52,
+        "vol_min_pct": 0.005,
+        "ema_fast": 8,
+        "ema_slow": 21,
+        "trend_pulse_mult": 0.45596263377414287,
+        "allowed_hours": [
+          9,
+          10,
+          11
+        ],
+        "max_hold_bars": 6,
+        "use_dynamic_sizing": false,
+        "use_multi_timeframe": false,
+        "use_profit_ladder": true,
+        "ladder_rsi_1": 65,
+        "ladder_rsi_2": 73,
+        "ladder_frac_1": 0.35,
+        "use_adaptive_hold": true,
+        "use_dynamic_rsi": false
+      },
+      "metrics": {
+        "sharpe": 3.3227739852356346,
+        "trades": 120,
+        "return": 11.424500000000073,
+        "win_rate": 62.5,
+        "max_dd": -3.388414555573745
+      },
+      "improvement": 1.4830473218377451
+    },
+    "YESBANK": {
+      "symbol": "YESBANK",
+      "accept": false,
+      "params": {
+        "ker_period": 10,
+        "rsi_period": 2,
+        "vol_lookback": 20,
+        "max_return_cap": 5.0,
+        "ker_threshold_meanrev": 0.26980488595343255,
+        "ker_threshold_trend": 0.47911308589265544,
+        "rsi_entry": 23,
+        "rsi_exit": 88,
+        "vol_min_pct": 0.003,
+        "ema_fast": 5,
+        "ema_slow": 21,
+        "trend_pulse_mult": 0.4097573487563908,
+        "allowed_hours": [
+          9,
+          10,
+          11,
+          12,
+          13
+        ],
+        "max_hold_bars": 6,
+        "use_dynamic_sizing": false,
+        "use_multi_timeframe": false,
+        "use_profit_ladder": true,
+        "ladder_rsi_1": 63,
+        "ladder_rsi_2": 74,
+        "ladder_frac_1": 0.35,
+        "use_adaptive_hold": true,
+        "use_dynamic_rsi": false
+      },
+      "metrics": {
+        "sharpe": 0.325006492639019,
+        "trades": 124,
+        "return": 2.4564400000001334,
+        "win_rate": 51.61290322580645,
+        "max_dd": -6.8193029375380885
+      },
+      "improvement": -0.9532759668063642
+    }
+  },
+  "vbl_ensemble": 1.574329889604498,
+  "nifty_trend": 0.006,
+  "portfolio": {
+    "before": 1.2684336898936392,
+    "after": 1.3821476920619151,
+    "change": 0.11371400216827587
+  }
+}

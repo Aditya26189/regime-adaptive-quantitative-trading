@@ -1,0 +1,32 @@
+{
+  "symbol": "YESBANK",
+  "accept": false,
+  "params": {
+    "ker_period": 10,
+    "rsi_period": 2,
+    "vol_lookback": 20,
+    "max_return_cap": 5.0,
+    "ker_threshold_meanrev": 0.26980488595343255,
+    "ker_threshold_trend": 0.47911308589265544,
+    "rsi_entry": 23,
+    "rsi_exit": 88,
+    "vol_min_pct": 0.0054985912613041196,
+    "ema_fast": 5,
+    "ema_slow": 21,
+    "trend_pulse_mult": 0.4097573487563908,
+    "allowed_hours": [
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "max_hold_bars": 2
+  },
+  "metrics": {
+    "sharpe": 1.2782824594453832,
+    "trades": 122,
+    "return": 0.0,
+    "maxdd": 0.0
+  }
+}

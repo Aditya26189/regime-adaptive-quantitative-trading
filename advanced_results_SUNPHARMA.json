@@ -1,0 +1,40 @@
+{
+  "symbol": "SUNPHARMA",
+  "accept": true,
+  "params": {
+    "ker_period": 15,
+    "rsi_period": 4,
+    "vol_lookback": 14,
+    "max_return_cap": 5.0,
+    "ker_threshold_meanrev": 0.38224215306531234,
+    "ker_threshold_trend": 0.6094140658792518,
+    "rsi_entry": 38,
+    "rsi_exit": 52,
+    "vol_min_pct": 0.005,
+    "ema_fast": 8,
+    "ema_slow": 21,
+    "trend_pulse_mult": 0.45596263377414287,
+    "allowed_hours": [
+      9,
+      10,
+      11
+    ],
+    "max_hold_bars": 6,
+    "use_dynamic_sizing": false,
+    "use_multi_timeframe": false,
+    "use_profit_ladder": true,
+    "ladder_rsi_1": 65,
+    "ladder_rsi_2": 73,
+    "ladder_frac_1": 0.35,
+    "use_adaptive_hold": true,
+    "use_dynamic_rsi": false
+  },
+  "metrics": {
+    "sharpe": 3.3227739852356346,
+    "trades": 120,
+    "return": 11.424500000000073,
+    "win_rate": 62.5,
+    "max_dd": -3.388414555573745
+  },
+  "improvement": 1.4830473218377451
+}
