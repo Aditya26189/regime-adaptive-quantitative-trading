@@ -1,1 +1,141 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
 venv/
+ENV/
+env/
+.venv
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# Environment variables
+.env
+.env.local
+
+# Data files
+*.csv
+*.xlsx
+*.xls
+data/raw/*.csv
+!data/raw/.gitkeep
+
+# Output files
+output/*.csv
+output/*.json
+output/*.png
+!output/.gitkeep
+
+# Optimization results
+optimization_results/*.json
+optimization_results/*.pkl
+!optimization_results/.gitkeep
+
+# Reports
+reports/*.png
+reports/*.pdf
+reports/*.html
+!reports/.gitkeep
+
+# Logs
+*.log
+logs/
+*.log.*
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.hypothesis/
+
+# Documentation builds
+docs/_build/
+docs/api/_autosummary/
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~
+
+# OS specific
+Thumbs.db
+.DS_Store
+.Spotlight-V100
+.Trashes
+
+# Project specific
+*.json
+!config/*.json
+!requirements.json
+baseline_metrics.json
+phase1_*.json
+advanced_*.json
+
+# Old submissions
+submission_*/
+submission_[0-9]/
+
+# Experimental
+experimental_*/
+experiments/archive/
+
+# Backup files
+*.backup
+*_backup.py
+*_old.py
+
+# Compiled files
+*.pyc
+*.pyo
+*.pyd
+
+# Package files
+*.whl
+*.tar.gz
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre
+.pyre/
+
+# pytype
+.pytype/
+
+# Cython
+cython_debug/
