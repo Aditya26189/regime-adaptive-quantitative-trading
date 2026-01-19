@@ -45,7 +45,7 @@ env/
 .env.local
 
 # Data files
-*.csv
+# *.csv
 *.xlsx
 *.xls
 data/raw/*.csv
@@ -97,7 +97,7 @@ Thumbs.db
 .Trashes
 
 # Project specific
-*.json
+# *.json
 !config/*.json
 !requirements.json
 baseline_metrics.json
@@ -105,8 +105,8 @@ phase1_*.json
 advanced_*.json
 
 # Old submissions
-submission_*/
-submission_[0-9]/
+# submission_*/
+# submission_[0-9]/
 
 # Experimental
 experimental_*/
