@@ -7,9 +7,20 @@
 
 ---
 
+## 🏆 COMPETITION OUTCOME
+
+**Result:** Winner - 🥇 **1st Place / 200+ Teams**  
+**Event:** IIT Kharagpur Quant Games 2026  
+**Date:** January 17, 2026  
+**Final Portfolio Sharpe:** 2.276 (validated)
+
+This document chronicles the complete optimization journey that led to victory.
+
+---
+
 ## Executive Summary
 
-This document chronicles the complete optimization journey from initial naive strategies achieving 0.8 Sharpe to our final submission's **2.276 Portfolio Sharpe Ratio** - a **184% improvement**. The journey involved 300+ hours of development, 50,000+ backtests, and countless failures before achieving breakthrough results.
+This document chronicles the complete optimization journey from initial naive strategies achieving 0.8 Sharpe to our championship-winning **2.276 Portfolio Sharpe Ratio** - a **184% improvement**. The journey involved 300+ hours of development, 50,000+ backtests, and countless failures before achieving breakthrough results that secured **1st place among 200+ competing teams**.
 
 ### Journey Highlights
 

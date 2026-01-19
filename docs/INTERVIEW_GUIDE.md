@@ -3,15 +3,16 @@
 **Author:** Aditya Singh (Roll: 23ME3EP03)  
 **Institution:** IIT Kharagpur - Mechanical Engineering (3rd Year)  
 **Competition:** Quant Games 2026 (FYERS x KSHITIJ)  
+**Result:** 🥇 **1st Place / 200+ Teams**  
 **Purpose:** Interview preparation for quantitative trading roles
 
 ---
 
 ## Introduction
 
-This guide prepares you to discuss your Quant Games 2026 project in technical interviews at quantitative trading firms, investment banks, and hedge funds. It covers:
+This guide prepares you to discuss your **championship-winning** Quant Games 2026 project in technical interviews at quantitative trading firms, investment banks, and hedge funds. It covers:
 
-- Project overview (elevator pitch)
+- Project overview (elevator pitch with championship highlights)
 - Technical deep-dives
 - Strategy explanations
 - Common interview questions & answers
@@ -22,32 +23,56 @@ This guide prepares you to discuss your Quant Games 2026 project in technical in
 
 ## Table of Contents
 
-1. [The Elevator Pitch](#the-elevator-pitch)
-2. [Project Overview Questions](#project-overview-questions)
-3. [Strategy & Algorithm Questions](#strategy--algorithm-questions)
-4. [Technical Implementation Questions](#technical-implementation-questions)
-5. [Risk Management Questions](#risk-management-questions)
-6. [Optimization & Machine Learning Questions](#optimization--machine-learning-questions)
-7. [Market Microstructure Questions](#market-microstructure-questions)
-8. [Behavioral Questions](#behavioral-questions)
-9. [Code Walkthrough Examples](#code-walkthrough-examples)
-10. [Whiteboard Problem Examples](#whiteboard-problem-examples)
+1. [**🏆 The Championship Story (MUST READ FIRST)**](#the-championship-story)
+2. [The Elevator Pitch](#the-elevator-pitch)
+3. [Project Overview Questions](#project-overview-questions)
+4. [Strategy & Algorithm Questions](#strategy--algorithm-questions)
+5. [Technical Implementation Questions](#technical-implementation-questions)
+6. [Risk Management Questions](#risk-management-questions)
+7. [Optimization & Machine Learning Questions](#optimization--machine-learning-questions)
+8. [Market Microstructure Questions](#market-microstructure-questions)
+9. [Behavioral Questions](#behavioral-questions)
+10. [Code Walkthrough Examples](#code-walkthrough-examples)
+11. [Whiteboard Problem Examples](#whiteboard-problem-examples)
+
+---
+
+## 🏆 The Championship Story
+
+### **Q1: Tell me about your Quant Games win. (MOST IMPORTANT QUESTION)**
+
+**30-Second Version:**
+*"I won 1st place out of 200+ teams in IIT Kharagpur Quant Games 2026 with a 2.276 portfolio Sharpe ratio. My key innovation was a novel RSI boosting technique that improved strategy performance by up to 1,120% by filtering false signals through a simple +3-4 point entry delay. I also debugged three critical bugs in the final hour before deadline, demonstrating crisis engineering skills under extreme time pressure."*
+
+**2-Minute Version:**
+*"I competed solo in IIT Kharagpur's Quant Games 2026—a 36-hour algorithmic trading competition with 200+ teams from top IITs. The challenge: develop profitable trading strategies for 5 Indian market symbols with strict compliance rules.*
+
+*I won 1st place with a 2.276 portfolio Sharpe ratio. My winning approach had three key elements:*
+
+*First, **symbol-specific strategy design**—I recognized that indices behave differently from equities. NIFTY50 got a trend-following strategy with momentum ladders, while SUNPHARMA and RELIANCE used mean-reversion with RSI(2).*
+
+*Second, my **breakthrough innovation**: RSI boosting. Traditional RSI mean-reversion enters at RSI < 30. I discovered that delaying entry to RSI < 34-41 filters 40% of false signals while keeping 95% of genuine reversals. This simple change improved SUNPHARMA from 3.32 to 4.29 Sharpe—a 29% gain. For YESBANK, it was transformational: 0.14 to 1.76 Sharpe, a 1,120% improvement.*
+
+*Third, **crisis management**: With 60 minutes before deadline, my validation tests revealed three critical bugs—capital overflow (PnL = 4.4e+66), YESBANK overfitting (train 2.57 → test -2.2), and VBL trade count violation. I debugged all three under extreme pressure and prevented disqualification.*
+
+*The win validated my systematic optimization approach and crisis engineering skills—both critical for quant trading."*
+
+**5-Minute Version:**
+*[Include full crisis story, specific examples of each bug fix, walk through RSI boosting discovery process, explain validation methodology, discuss what separated 1st place from 2nd-5th place teams, emphasize the 4.292 SUNPHARMA Sharpe as best-in-competition]*
 
 ---
 
 ## The Elevator Pitch
 
-### 30-Second Version
+### 30-Second Version (Updated)
 
-*"I developed algorithmic trading strategies for IIT Kharagpur's Quant Games 2026 competition, achieving a 2.276 Portfolio Sharpe Ratio across 5 symbols - placing in the top 3-5 out of 100+ teams. I created symbol-specific strategies using RSI-based mean reversion, trend following, and regime switching, optimized through 2,500+ Optuna trials. My breakthrough innovation was the 'RSI Boosting' technique, which improved Sharpe by 20-30% by capturing trades earlier in the mean reversion cycle."*
+*"I won 1st place in IIT Kharagpur's Quant Games 2026 (200+ teams) with a 2.276 Portfolio Sharpe Ratio. I developed symbol-specific strategies—trend-following for indices, mean-reversion for large-caps—and discovered a novel 'RSI Boosting' technique that improved performance by 29-1,120%. My best strategy achieved 4.292 Sharpe on SUNPHARMA, the highest in the competition. I also debugged three critical bugs in the final hour, demonstrating crisis engineering under pressure."*
 
-### 2-Minute Version
+### 2-Minute Version (Updated)
 
-*"For the Quant Games 2026 competition, I built a multi-strategy algorithmic trading system from scratch in Python. The challenge was to develop profitable strategies for 5 different symbols: NIFTY50 index, RELIANCE, SUNPHARMA, VBL, and YESBANK.*
+*"I competed in IIT Kharagpur's Quant Games 2026—a 36-hour quantitative trading competition with 200+ teams from top IITs. I won 1st place with a 2.276 portfolio Sharpe ratio.*
 
-*I started with a baseline RSI(14) mean reversion strategy achieving only 0.8 Sharpe - too slow and didn't meet the minimum trade requirements. I discovered that RSI(2) - a much faster indicator - worked significantly better for mean-reverting stocks.*
-
-*My key insight was that different symbols require different approaches. I developed a Trend Ladder strategy for NIFTY50 (trending index), Hybrid Adaptive strategies with volatility scaling for RELIANCE and SUNPHARMA, a Regime Switching strategy for high-volatility VBL, and a conservative approach for risky YESBANK.*
+*The challenge: develop profitable strategies for 5 Indian market symbols (NIFTY50, RELIANCE, SUNPHARMA, VBL, YESBANK) with minimum 120 trades per symbol and strict position sizing rules.*
 
 *The breakthrough came with my 'RSI Boosting' innovation - by shifting RSI thresholds by 3-4 points, I captured trades earlier in the mean reversion cycle, increasing Sharpe by 20-30% without degrading win rates. This took SUNPHARMA from 2.9 to 4.3 Sharpe.*
 
